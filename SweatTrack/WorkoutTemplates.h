@@ -17,6 +17,7 @@
 @property (nonatomic, retain) NSString * workoutTypesOrder;
 @property (nonatomic, retain) NSString * workoutTypesDefaultValues;
 @property (nonatomic, retain) NSSet *workoutTypesIncluded;
+
 @end
 
 @interface WorkoutTemplates (CoreDataGeneratedAccessors)

@@ -7,6 +7,7 @@
 //
 
 #import "AddWorkoutTypeViewController.h"
+#import "GAI.h"
 
 @interface AddWorkoutTypeViewController ()
 
@@ -40,15 +41,13 @@
 
 @synthesize textFieldWorkoutTypeName = _textFieldWorkoutTypeName, textFieldMetric1Name = _textFieldMetric1Name, textFieldMetric1Unit = _textFieldMetric1Unit, textFieldMetric2Name = _textFieldMetric2Name, textFieldMetric2Unit = _textFieldMetric2Unit, textFieldMetric3Name = _textFieldMetric3Name, textFieldMetric3Unit = _textFieldMetric3Unit;
 
-- (void)viewWillAppear:(BOOL)animated
+-(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
     if (!self.allTextFields) {
         self.allTextFields = [[NSMutableDictionary alloc] init];
     }
-    
-    [self updateWarningLabel];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -84,17 +83,9 @@
         case 3:
             return 25.00;
         default:
-            return 32.00;  //36.00
-    }
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{   
-    if (section == 2) {
-        return @"Metric Names and Units";
+            return 36.00;
     }
     
-    return @"";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -103,7 +94,7 @@
     
     // Configure the cell...
     
-    CGRect nameFrame = CGRectMake(80.0, 4.0, 160.0, 27.0);  //70.0, 9.0, 160.0, 27.0
+    CGRect nameFrame = CGRectMake(70.0, 9.0, 160.0, 27.0);
     CGRect switchFrame = CGRectMake(192.0, 4.0, 100.0, 27.0);
     CGRect metricNameFrame = CGRectMake(8.0, 4.0, 180.0, 27.0);
     CGRect metricDefaultUnitFrame = CGRectMake(192.0, 4.0, 100.0, 27.0);
@@ -112,10 +103,6 @@
     CGRect submitButtonFrame = CGRectMake(190.0, 9.0, 100.0, 27.0); //100.0, 9.0, 100.0, 27.0
     
     if (indexPath.section == 0) {
-        cell.textLabel.text = @"Name";
-        cell.textLabel.font = [UIFont systemFontOfSize:16.0];
-        cell.textLabel.backgroundColor = [UIColor clearColor];
-        
         UITextField *workoutNameTextField = [[UITextField alloc] initWithFrame:nameFrame];
         workoutNameTextField.backgroundColor = [UIColor whiteColor];
         workoutNameTextField.borderStyle = UITextBorderStyleRoundedRect;
@@ -126,6 +113,10 @@
         workoutNameTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
         workoutNameTextField.textAlignment = UITextAlignmentCenter;
         workoutNameTextField.tag = 1;
+        
+        if ([[self.stateData valueForKey:@"textFieldWorkoutName"] isEqualToString:@""]) {
+            
+        }
         
         [self.allTextFields setValue:workoutNameTextField forKey:@"textFieldWorkoutName"];
         
@@ -169,7 +160,6 @@
         workoutMetricDefaultUnitTextField.font = [UIFont systemFontOfSize:15.0];
         workoutMetricDefaultUnitTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
         workoutMetricDefaultUnitTextField.textAlignment = UITextAlignmentLeft;
-        workoutMetricDefaultUnitTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
         workoutMetricDefaultUnitTextField.tag = (indexPath.row+2)*2;
         
         switch (indexPath.row) {
@@ -239,18 +229,16 @@
         UIButton *clearButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         clearButton.frame = clearButtonFrame;
         [clearButton setTitle:@"Clear" forState:UIControlStateNormal];
-        [clearButton addTarget:self action:@selector(clearButtonPressed:) forControlEvents:UIControlEventTouchDown];
+        [clearButton addTarget:self action:@selector(clearButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         
         UIButton *submitButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         submitButton.frame = submitButtonFrame;
         [submitButton setTitle:@"Submit" forState:UIControlStateNormal];
-        [submitButton addTarget:self action:@selector(submitButtonPressed:) forControlEvents:UIControlEventTouchDown];
+        [submitButton addTarget:self action:@selector(submitButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         
         [[cell.contentView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
         [cell.contentView addSubview:clearButton];
         [cell.contentView addSubview:submitButton];
-        
-        [self updateWarningLabel]; //Called here as this is the last row which has a text field
     } //Row for submit button
     
     if (indexPath.section != 2) {
@@ -260,7 +248,7 @@
     }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
+
     return cell;
 }
 
@@ -298,9 +286,6 @@
             else {
                 [self.stateData setValue:enteredText forKey:@"textFieldWorkoutName"];
             }
-        }
-        else {
-            [self.stateData setValue:enteredText forKey:@"textFieldWorkoutName"];
         }
     } //Workout Name
     
@@ -393,24 +378,7 @@
         [self.stateData setValue:enteredText forKey:@"textFieldMetric3Unit"];
     } //Metric3 Unit
     
-    [self updateWarningLabel];   
-    
     return YES;
-}
-
-- (void)updateWarningLabel
-{
-    if ([self.labelInWarningRow.text isEqualToString:@""]) {
-        if ([[self.stateData valueForKey:@"textFieldWorkoutName"] isEqualToString:@""] && [[self.stateData valueForKey:@"textFieldMetric1Name"] isEqualToString:@""]) {
-            self.labelInWarningRow.text = @"Enter a work out name and metric";
-        }
-        else if ([[self.stateData valueForKey:@"textFieldWorkoutName"] isEqualToString:@""]) {
-            self.labelInWarningRow.text = @"Enter a work out name.";
-        }
-        else if ([[self.stateData valueForKey:@"textFieldMetric1Name"] isEqualToString:@""]) {
-            self.labelInWarningRow.text = @"Enter a metric.";
-        }
-    }
 }
 
 #pragma mark - Attribute change methods
@@ -431,10 +399,10 @@
     if ([[self.stateData valueForKey:@"textFieldWorkoutName"] isEqualToString:@""] ||
         [[self.stateData valueForKey:@"textFieldMetric1Name"] isEqualToString:@""]) {
         if ([[self.stateData valueForKey:@"textFieldWorkoutName"] isEqualToString:@""] && [[self.stateData valueForKey:@"textFieldMetric1Name"] isEqualToString:@""]) {
-            self.labelInWarningRow.text = @"Enter a work out name and metric";
+            self.labelInWarningRow.text = @"Enter a workout name and metric";
         }
         else if ([[self.stateData valueForKey:@"textFieldWorkoutName"] isEqualToString:@""]) {
-            self.labelInWarningRow.text = @"Enter a work out name.";
+            self.labelInWarningRow.text = @"Enter a workout name.";
         }
         else if ([[self.stateData valueForKey:@"textFieldMetric1Name"] isEqualToString:@""]) {
             self.labelInWarningRow.text = @"Enter a metric.";
@@ -495,6 +463,35 @@
             abort();
         } 
     }
+    if (ANALYTICS_TRACKING == TRUE) {
+        [self sendAnalyticsData];
+    }
+}
+
+#pragma mark - Analytics method
+
+- (void)sendAnalyticsData
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if (![defaults objectForKey:@"analyticsAddWorkoutType"]) {
+        [[[GAI sharedInstance] defaultTracker] trackView:@"Add Workout Type"];
+        [defaults setObject:[NSDate date] forKey:@"analyticsAddWorkoutType"];
+    }
+    else {
+        NSDate *analyticsLastPostDate = [defaults objectForKey:@"analyticsAddWorkoutType"];
+        NSDate *currentDate = [NSDate date];
+        
+        NSInteger analyticsLastPostDateDay = [[[NSCalendar currentCalendar] components:NSDayCalendarUnit fromDate:analyticsLastPostDate] day];
+        NSInteger currentDateDay = [[[NSCalendar currentCalendar] components:NSDayCalendarUnit fromDate:currentDate] day];
+        
+        if (analyticsLastPostDateDay != currentDateDay) {
+            [[[GAI sharedInstance] defaultTracker] trackView:@"Add Workout Type"];
+            [defaults setObject:[NSDate date] forKey:@"analyticsAddWorkoutType"];
+        }
+    }
+    
+    [defaults synchronize];
 }
 
 @end
