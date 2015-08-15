@@ -15,5 +15,6 @@
 
 @property (nonatomic, strong) WorkoutTypes *workoutType;
 @property (nonatomic, strong) NSManagedObjectContext *context;
+@property (nonatomic, strong) NSManagedObjectID *managedObjectIDIfSeguedFromAnotherTab;
 
 @end

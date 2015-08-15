@@ -204,13 +204,10 @@
 
 #pragma mark - TextField delegate methods
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    for (UITextField *otherTextField in self.allTextFields) {
-        if (otherTextField != textField) {
-            otherTextField.userInteractionEnabled = NO;
-        }
-    }
+    [self updateDefaultValueInStore:textField];
 }
 
 - (void)updateDefaultValueInStore:(UITextField *)textField
@@ -235,12 +232,6 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
-    
-    [self updateDefaultValueInStore:textField];
-
-    for (UITextField *otherTextField in self.allTextFields) {
-        otherTextField.userInteractionEnabled = YES;
-    }
     
     return YES;
 }

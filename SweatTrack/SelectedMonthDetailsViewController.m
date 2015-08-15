@@ -16,8 +16,9 @@
 
 @property (nonatomic, strong) NSArray *fetchResults;
 
-@property (nonatomic, strong) NSMutableArray *variousUniqueDays;
-@property (nonatomic, strong) NSMutableArray *workoutsDoneOnVariousUniqueDays;
+@property (nonatomic, strong) NSMutableArray *allDateValuesOfSelectedMonth;
+@property (nonatomic, strong) NSMutableArray *variousUniqueFormattedDays;
+@property (nonatomic, strong) NSMutableArray *variousUniqueFormattedDaysCount;
 
 @end
 
@@ -27,21 +28,22 @@
 @synthesize monthPickerView = _monthPickerView;
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize fetchResults = _fetchResults;
-@synthesize variousUniqueDays = _variousUniqueDays;
-@synthesize workoutsDoneOnVariousUniqueDays = workoutsDoneOnVariousUniqueDays;
+@synthesize allDateValuesOfSelectedMonth = _allDateValuesOfSelectedMonth;
+@synthesize variousUniqueFormattedDays = _variousUniqueFormattedDays;
+@synthesize variousUniqueFormattedDaysCount = _variousUniqueFormattedDaysCount;
 
 - (void)executeFetch
 {
     if (self.monthRowText) {
-        // Create and configure a fetch request with the Book entity.
+        
+        // Create and configure a fetch request with the WorkoutsDone entity.
         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"WorkoutsDone" inManagedObjectContext:self.managedObjectContext];
         [fetchRequest setEntity:entity];
+        [fetchRequest setResultType:NSDictionaryResultType];
+        [fetchRequest setReturnsDistinctResults:NO];
+        [fetchRequest setPropertiesToFetch:[NSArray arrayWithObject:@"workoutDate"]];
         
-        // Create the sort descriptors array.
-        NSSortDescriptor *workoutNameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"workoutDate" ascending:NO];
-        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:workoutNameDescriptor, nil];
-        [fetchRequest setSortDescriptors:sortDescriptors];
         
         //Form date objects as per monthRowText, so that they can be used in the predicate
         NSString *monthInMonthRowText = [self.monthRowText substringToIndex:(self.monthRowText.length - 5)];
@@ -51,8 +53,7 @@
         [formatterForGettingMonthNumber setDateFormat:@"MMMM"];
         NSDate *dateForGettingMonthNumber = [formatterForGettingMonthNumber dateFromString:monthInMonthRowText];
         NSDateComponents *monthNumber = [[NSCalendar currentCalendar] components:NSMonthCalendarUnit fromDate:dateForGettingMonthNumber];
-        
-//        NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+
         NSCalendar *currentCalendar = [NSCalendar currentCalendar];
         NSDateComponents *date1Components = [[NSDateComponents alloc] init];
         [date1Components setDay:1];
@@ -68,10 +69,17 @@
         nextMonthComponents.month = 1;
         NSDate *date2 = [currentCalendar dateByAddingComponents:nextMonthComponents toDate:date1 options:0];
         
+
         fetchRequest.predicate = [NSPredicate predicateWithFormat:@"(workoutDate >= %@) AND (workoutDate < %@)", date1, date2];
+
+        NSSortDescriptor *workoutDateDescriptor = [[NSSortDescriptor alloc] initWithKey:@"workoutDate" ascending:NO];
+        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:workoutDateDescriptor, nil];
+        [fetchRequest setSortDescriptors:sortDescriptors];
         
-        NSError *error = nil;
-        self.fetchResults = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+        NSError *error;
+        // Create and initialize the fetch results controller.
+        self.allDateValuesOfSelectedMonth = (NSMutableArray *)[self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+        
     }
 }
 
@@ -80,6 +88,8 @@
     _monthRowText = monthRowText;
     
     [self executeFetch];
+    self.variousUniqueFormattedDays = nil;
+    self.variousUniqueFormattedDaysCount = nil;
     [self.tableView reloadData];
 }
 
@@ -104,6 +114,7 @@
         monthAndYear = [monthAndYear stringByAppendingFormat:@"%d", yearComponent];
         
         self.monthRowText = monthAndYear;
+        
     }
 
     self.monthPickerView = [[MonthPickerView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.size.height*0.7, self.view.frame.size.width, self.view.frame.size.height*0.3) andContext:self.managedObjectContext];
@@ -118,15 +129,15 @@
     
     [self.view addSubview:self.monthPickerView];
     
+    
     [self executeFetch];
     [self.tableView reloadData];
 
+    
     if ([self tableView:self.tableView numberOfRowsInSection:0] == 1 &&
         [self.monthPickerView pickerView:self.monthPickerView numberOfRowsInComponent:0] > 0){
-        
-        int lastRowIndexInPickerView = [self.monthPickerView pickerView:self.monthPickerView numberOfRowsInComponent:0] - 1;
-        if (![self.monthRowText isEqualToString:[self.monthPickerView pickerView:self.monthPickerView titleForRow:lastRowIndexInPickerView forComponent:0]]) {            
-            self.monthRowText = [self.monthPickerView pickerView:self.monthPickerView titleForRow:lastRowIndexInPickerView forComponent:0];
+        if (![self.monthRowText isEqualToString:[self.monthPickerView pickerView:self.monthPickerView titleForRow:0 forComponent:0]]) {            
+            self.monthRowText = [self.monthPickerView pickerView:self.monthPickerView titleForRow:0 forComponent:0];
         }
         
     }
@@ -136,33 +147,52 @@
 {
     self.monthPickerView.hidden = YES;
     self.monthPickerView = nil;
+    self.variousUniqueFormattedDays = nil;
+    self.variousUniqueFormattedDaysCount = nil;
 }
 
 #pragma mark - TableView Datasource and Delegate methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {   
-    self.variousUniqueDays = [[NSMutableArray alloc] init];
-    self.workoutsDoneOnVariousUniqueDays = [[NSMutableArray alloc] init];
     
-    for (int i = 0; i < self.fetchResults.count; i = i + 1) {
-        WorkoutsDone *workoutDone = [self.fetchResults objectAtIndex:i];
-        NSDateComponents *dateComponents = [[NSCalendar currentCalendar] components:NSDayCalendarUnit fromDate:workoutDone.workoutDate];   
+    self.variousUniqueFormattedDays = [[NSMutableArray alloc] init];
+    self.variousUniqueFormattedDaysCount = [[NSMutableArray alloc] init];
+    
+    
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MM"];
+    
+    NSDateFormatter *monthFormatter = [[NSDateFormatter alloc] init];
+    [monthFormatter setDateFormat:@"MMMM"];
+    
+    for (id workoutDateDictionary in self.allDateValuesOfSelectedMonth) {
+        NSDate *dateWorkoutDone = [workoutDateDictionary valueForKey:@"workoutDate"];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+        NSString *formattedDate = [dateFormatter stringFromDate:dateWorkoutDone];
         
-        NSString * dayComponent = [NSString stringWithFormat:@"%d",[dateComponents day]];
-        
-        if (![self.variousUniqueDays containsObject:dayComponent]) {
-            [self.variousUniqueDays addObject:dayComponent];
+        if (![self.variousUniqueFormattedDays containsObject:formattedDate]) {
+            [self.variousUniqueFormattedDays addObject:formattedDate];
+            [self.variousUniqueFormattedDaysCount addObject:[NSNumber numberWithInt:1]];
+        }
+        else {
+            NSUInteger index = [self.variousUniqueFormattedDays indexOfObject:formattedDate];
+            int currentCount = [[self.variousUniqueFormattedDaysCount objectAtIndex:index] intValue];
+            [self.variousUniqueFormattedDaysCount removeObjectAtIndex:index];
+            [self.variousUniqueFormattedDaysCount insertObject:[NSNumber numberWithInt:(currentCount + 1)] atIndex:index];
         }
     }
-
-    return self.variousUniqueDays.count + 1;
+    
+    return self.variousUniqueFormattedDays.count + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Workouts Done on Date Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    static NSString *CellIdentifier = @"Workouts Done on Date Cell";
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:nil];
     
     // Configure the cell...
     
@@ -181,31 +211,10 @@
     }
     
     else {
-        int dayForCell = [[self.variousUniqueDays objectAtIndex:(indexPath.row-1)] intValue];
+        cell.textLabel.text = [self.variousUniqueFormattedDays objectAtIndex:(indexPath.row-1)];
         
-        NSMutableArray *workoutsDoneOnDayForTheCell = [[NSMutableArray alloc] init];
-        
-        for (int i = 0; i < self.fetchResults.count; i = i + 1) {
-            WorkoutsDone *workoutDone = [self.fetchResults objectAtIndex:i];
-            NSDateComponents *dateComponents = [[NSCalendar currentCalendar] components:NSDayCalendarUnit fromDate:workoutDone.workoutDate];   
-
-            int dayComponent = [dateComponents day];
-            if (dayForCell == dayComponent) {
-                [workoutsDoneOnDayForTheCell addObject:workoutDone];
-            }
-        }
-        
-        [self.workoutsDoneOnVariousUniqueDays addObject:workoutsDoneOnDayForTheCell];
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%d work outs", workoutsDoneOnDayForTheCell.count];
-        
-        
-        
-        NSDate *dateForTheCell = [[workoutsDoneOnDayForTheCell objectAtIndex:0] valueForKey:@"workoutDate"];
-
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-        
-        cell.textLabel.text = [dateFormatter stringFromDate:dateForTheCell];
+        int workoutsCountForCell = [[self.variousUniqueFormattedDaysCount objectAtIndex:(indexPath.row-1)] intValue];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%d work outs", workoutsCountForCell];
     }
     
     return cell;
@@ -237,14 +246,23 @@
 
 #pragma mark - prepareForSegue:
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{    
+{   
     if ([segue.identifier isEqualToString:@"Show Selected Day Details"]) {
         if ([segue.destinationViewController respondsToSelector:@selector(setContext:)]) {
             [segue.destinationViewController performSelector:@selector(setContext:) withObject:self.managedObjectContext];
-            NSDate *selectedDate = [[[self.workoutsDoneOnVariousUniqueDays objectAtIndex:(self.tableView.indexPathForSelectedRow.row-1)]
-                                     objectAtIndex:0] valueForKey:@"workoutDate"]; 
             
-            [segue.destinationViewController performSelector:@selector(setDate:) withObject:selectedDate];
+            for (id workoutDateDictionary in self.allDateValuesOfSelectedMonth) {
+                NSDate *dateWorkoutDone = [workoutDateDictionary valueForKey:@"workoutDate"];
+                NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+                NSString *formattedDate = [dateFormatter stringFromDate:dateWorkoutDone];
+                
+                int selectedRow = self.tableView.indexPathForSelectedRow.row;
+                if ([formattedDate isEqualToString:[self.variousUniqueFormattedDays objectAtIndex:(selectedRow-1)]]) {
+                    [segue.destinationViewController performSelector:@selector(setDate:) withObject:dateWorkoutDone];
+                    break;
+                }
+            }
         }
     }
 }

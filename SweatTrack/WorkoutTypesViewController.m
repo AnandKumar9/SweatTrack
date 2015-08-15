@@ -9,7 +9,6 @@
 #import "WorkoutTypesViewController.h"
 #import "WorkoutTypes.h"
 #import "WorkoutTypes+Create.h"
-#import "WorkoutsDone+Create.h"
 
 @interface WorkoutTypesViewController ()
 
@@ -22,6 +21,7 @@
 
 @implementation WorkoutTypesViewController
 @synthesize buttonForHiddenAttribute = _buttonForHiddenAttribute;
+@synthesize workoutDoneWhenSeguedFromAnotherTab = _workoutDoneWhenSeguedFromAnotherTab;
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize hideHiddenWorkouts = _hideHiddenWorkouts;
@@ -146,21 +146,24 @@
     
     if ([segue.identifier isEqualToString:@"Show Workouts Done for a Type"]) {
         if ([segue.destinationViewController respondsToSelector:@selector(setWorkoutType:)]) {
-            WorkoutTypes *workoutType = [self.fetchedResultsController objectAtIndexPath:self.indexPathForRowTapped];
+
+            WorkoutTypes *workoutType;
+            if ([NSStringFromClass([sender class]) isEqualToString:@"WorkoutTypesViewController"]) {
+                workoutType = [self.fetchedResultsController objectAtIndexPath:self.indexPathForRowTapped];            }
+            
+            else if ([NSStringFromClass([sender class]) isEqualToString:@"EditWorkoutDetailsViewController"]) {
+                workoutType = self.workoutDoneWhenSeguedFromAnotherTab.workoutType;
+                [segue.destinationViewController performSelector:@selector(setManagedObjectIDIfSeguedFromAnotherTab:) 
+                                                      withObject:self.workoutDoneWhenSeguedFromAnotherTab.objectID];
+
+            }
+            
             [segue.destinationViewController performSelector:@selector(setWorkoutType:) withObject:workoutType];
 //            [segue.destinationViewController performSelector:@selector(setContext:) withObject:workoutType.managedObjectContext];
         }
     }
     
 }
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    if ([keyPath isEqualToString:@"workoutsDatabase"]) {
-        NSLog(@"PREVIOUS VALUE - %@  NEW VALUE - %@",[change objectForKey:NSKeyValueChangeOldKey], [change objectForKey:NSKeyValueChangeNewKey]);
-    }
-}
-
 
 - (void)viewDidUnload {
     [self setButtonForHiddenAttribute:nil];

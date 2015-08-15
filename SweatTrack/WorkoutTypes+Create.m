@@ -48,7 +48,6 @@
         workoutType.workoutHiddenByDefault = hiddenByDefault;
     } else {
         workoutType = [matchingWorkoutTypesFetched lastObject];
-//        NSLog(@"Already exists");
     }
     
     return workoutType;    

@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "CoreDataTableViewController.h"
-#import "WorkoutsDone.h"
 
 @interface SelectedMonthDetailsViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate> 
 

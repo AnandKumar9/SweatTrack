@@ -17,6 +17,7 @@
 
 @synthesize workoutType = _workoutType;
 @synthesize context = _context;
+@synthesize managedObjectIDIfSeguedFromAnotherTab = _managedObjectIDIfSeguedFromAnotherTab;
 
 - (void)setupFetchedResultsController
 {
@@ -41,6 +42,24 @@
     self.context = workoutType.managedObjectContext;
     
     [self setupFetchedResultsController];
+}
+
+#pragma mark - View life cycle methods
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    if (self.managedObjectIDIfSeguedFromAnotherTab) {
+        NSIndexPath *indexPathToBeScrolledTo = [self.fetchedResultsController indexPathForObject:[self.context objectWithID:self.managedObjectIDIfSeguedFromAnotherTab]];
+        [self.tableView scrollToRowAtIndexPath:indexPathToBeScrolledTo atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    }
+
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    self.managedObjectIDIfSeguedFromAnotherTab = nil;
+    [super viewDidDisappear:animated];
 }
 
 #pragma mark - Table view data source

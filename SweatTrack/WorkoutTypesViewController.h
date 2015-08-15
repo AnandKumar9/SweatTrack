@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CoreDataTableViewController.h"
+#import "WorkoutsDone+Create.h"
 
 @interface WorkoutTypesViewController : CoreDataTableViewController
 
@@ -15,6 +16,8 @@
 
 - (IBAction)addWorkoutTypeButtonPressed:(id)sender;
 - (IBAction)buttonForHiddenAttributePressed:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonForHiddenAttribute;
+@property (strong, nonatomic) WorkoutsDone *workoutDoneWhenSeguedFromAnotherTab;
 
 @end

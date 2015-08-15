@@ -26,7 +26,7 @@
     
     self.uniqueMonthsInStore = [[NSMutableArray alloc] init];
     
-    // Create and configure a fetch request with the Book entity.
+    // Create and configure a fetch request with the WorkoutsDone entity.
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"WorkoutsDone" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
@@ -37,7 +37,6 @@
     NSError *error;
     // Create and initialize the fetch results controller.
     NSArray *allDateValuesInStore = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM"];
     
@@ -58,6 +57,8 @@
            [self.uniqueMonthsInStore addObject:monthAndYear];
        }
    }
+    
+    self.uniqueMonthsInStore = (NSMutableArray *)[[self.uniqueMonthsInStore reverseObjectEnumerator] allObjects];
 }
 
 - (id)initWithFrame:(CGRect)frame andContext:(NSManagedObjectContext *)context

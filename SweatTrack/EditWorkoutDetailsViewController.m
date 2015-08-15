@@ -56,7 +56,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
     
     [self.tableView reloadData];
-
+    
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -70,7 +70,7 @@
         UITextField *textField = [self.allTextFields valueForKey:textFieldKey];
         textField.userInteractionEnabled = YES;
     }
-
+    
     self.labelInWarningRow.text = @"";
     [[NSNotificationCenter defaultCenter] removeObserver:self];   //Unregister from keyboard notification, else they may start piling
     
@@ -118,7 +118,7 @@
     
     CGRect warningFrame = CGRectMake(10.0, 9.0, 280.0, 27.0);  //10.0, 9.0, 280.0, 24.0
     CGRect deleteButtonFrame = CGRectMake(100.0, 9.0, 100.0, 27.0);  //100.0, 9.0, 100.0, 24.0
-
+    
     if (indexPath.section == 0) {
         UITextField *workoutNameLabel = [[UITextField alloc] initWithFrame:workoutNameFrame];
         workoutNameLabel.backgroundColor = [UIColor clearColor];
@@ -131,7 +131,7 @@
         workoutNameLabel.textAlignment = UITextAlignmentCenter;
         workoutNameLabel.tag = 99;
         
-//        [self.allTextFields setValue:workoutNameLabel forKey:@"textFieldWorkoutName"];
+        //        [self.allTextFields setValue:workoutNameLabel forKey:@"textFieldWorkoutName"];
         
         [[cell.contentView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
         [cell.contentView addSubview:workoutNameLabel];
@@ -272,13 +272,26 @@
     }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-
+    
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.section == 0) {
+        if (self.tabBarController.selectedIndex == 1) {
+            
+            [[self.tabBarController.viewControllers objectAtIndex:2] popToRootViewControllerAnimated:NO];
+            
+            id tempObject = [[self.tabBarController.viewControllers objectAtIndex:2] valueForKey:@"topViewController"];
+            [tempObject performSelector:@selector(setWorkoutDoneWhenSeguedFromAnotherTab:) withObject:self.workoutDone];
+            [tempObject performSegueWithIdentifier:@"Show Workouts Done for a Type" sender:self];
+            
+            self.tabBarController.selectedIndex = 2;
+        }
+    }
+    
     if (indexPath.section == 1) {
         if ([self.keyboardVisible boolValue] == NO) {
             //Set up Date Picker
@@ -360,7 +373,6 @@
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField
 {
     if (textField.tag == 7 || textField.tag == 8 || textField.tag ==9) {
-        NSLog(@"In");
         self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     }
     
@@ -481,8 +493,8 @@
             self.workoutDeleteAttemptedFromTextField = [NSDictionary dictionaryWithObjectsAndKeys:textField, @"textField", 
                                                         self.workoutDone.workoutMetric1Value, @"textFieldValue", nil];
             [self confirmWorkoutDeletionWithText:@"Deleting all metrics will delete the work out.\n Are you sure you want to delete it?"];
-                //Restore the value in text field if user choses to cancel
-            }
+            //Restore the value in text field if user choses to cancel
+        }
         else {
             self.workoutDone.workoutMetric1Value = enteredText;
             [self saveContext];
@@ -526,7 +538,7 @@
         [self saveContext];
         [self.tableView reloadData];
     } //Metric1 Unit
-
+    
     if (textField.tag == 6) {
         self.workoutDone.workoutMetric2Unit = enteredText;
         [self saveContext];
@@ -596,7 +608,7 @@
         [[self.workoutDeleteAttemptedFromTextField valueForKey:@"textField"] setValue:[self.workoutDeleteAttemptedFromTextField valueForKey:@"textFieldValue"] forKey:@"text"];
     }
 }
-                 
+
 - (void)saveContext
 {   
     NSError *error = nil;
@@ -608,4 +620,5 @@
         } 
     }
 }
+
 @end

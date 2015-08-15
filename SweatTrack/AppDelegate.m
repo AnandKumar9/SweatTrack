@@ -276,6 +276,7 @@
     }
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"SweatTrack" withExtension:@"momd"];
     __managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    
     return __managedObjectModel;
 }
 
