@@ -397,7 +397,7 @@
             if ([self.workoutDone.workoutMetric2Value isEqualToString:@""] && [self.workoutDone.workoutMetric3Value isEqualToString:@""]) {
                 self.workoutDeleteAttemptedFromTextField = [NSDictionary dictionaryWithObjectsAndKeys:textField, @"textField", 
                                                             self.workoutDone.workoutMetric1Name, @"textFieldValue", nil];
-                [self confirmWorkoutDeletionWithText:@"Deleting all metrics will delete the work out.\n Are you sure you want to delete it?"];
+                [self confirmWorkoutDeletionWithText:@"Deleting all metrics will delete the workout.\n Are you sure you want to delete it?"];
             }
             else {
                 self.workoutDone.workoutMetric1Name = self.workoutDone.workoutMetric2Name;
@@ -431,7 +431,7 @@
             if ([self.workoutDone.workoutMetric1Value isEqualToString:@""] && [self.workoutDone.workoutMetric3Value isEqualToString:@""]) {
                 self.workoutDeleteAttemptedFromTextField = [NSDictionary dictionaryWithObjectsAndKeys:textField, @"textField", 
                                                             self.workoutDone.workoutMetric2Name, @"textFieldValue", nil];       
-                [self confirmWorkoutDeletionWithText:@"Deleting all metrics will delete the work out.\n Are you sure you want to delete it?"];
+                [self confirmWorkoutDeletionWithText:@"Deleting all metrics will delete the workout.\n Are you sure you want to delete it?"];
             }
             else {
                 self.workoutDone.workoutMetric2Name = self.workoutDone.workoutMetric3Name;
@@ -462,7 +462,7 @@
             if ([self.workoutDone.workoutMetric1Value isEqualToString:@""] && [self.workoutDone.workoutMetric2Value isEqualToString:@""]) {
                 self.workoutDeleteAttemptedFromTextField = [NSDictionary dictionaryWithObjectsAndKeys:textField, @"textField", 
                                                             self.workoutDone.workoutMetric3Name, @"textFieldValue", nil];
-                [self confirmWorkoutDeletionWithText:@"Deleting all metrics will delete the work out.\n Are you sure you want to delete it?"];
+                [self confirmWorkoutDeletionWithText:@"Deleting all metrics will delete the workout.\n Are you sure you want to delete it?"];
                 //Restore the value in text field if user choses to cancel
             }
             else {
@@ -492,7 +492,7 @@
             ([self.workoutDone.workoutMetric2Value isEqualToString:@""] && [self.workoutDone.workoutMetric3Value isEqualToString:@""])) {
             self.workoutDeleteAttemptedFromTextField = [NSDictionary dictionaryWithObjectsAndKeys:textField, @"textField", 
                                                         self.workoutDone.workoutMetric1Value, @"textFieldValue", nil];
-            [self confirmWorkoutDeletionWithText:@"Deleting all metrics will delete the work out.\n Are you sure you want to delete it?"];
+            [self confirmWorkoutDeletionWithText:@"Deleting all metrics will delete the workout.\n Are you sure you want to delete it?"];
             //Restore the value in text field if user choses to cancel
         }
         else {
@@ -507,7 +507,7 @@
             ([self.workoutDone.workoutMetric1Value isEqualToString:@""] && [self.workoutDone.workoutMetric3Value isEqualToString:@""])) {
             self.workoutDeleteAttemptedFromTextField = [NSDictionary dictionaryWithObjectsAndKeys:textField, @"textField", 
                                                         self.workoutDone.workoutMetric2Value, @"textFieldValue", nil];
-            [self confirmWorkoutDeletionWithText:@"Deleting all metrics will delete the work out.\n Are you sure you want to delete it?"];
+            [self confirmWorkoutDeletionWithText:@"Deleting all metrics will delete the workout.\n Are you sure you want to delete it?"];
             //Restore the value in text field if user choses to cancel
         }
         else {
@@ -522,7 +522,7 @@
             ([self.workoutDone.workoutMetric1Value isEqualToString:@""] && [self.workoutDone.workoutMetric2Value isEqualToString:@""])) {
             self.workoutDeleteAttemptedFromTextField = [NSDictionary dictionaryWithObjectsAndKeys:textField, @"textField", 
                                                         self.workoutDone.workoutMetric3Value, @"textFieldValue", nil];
-            [self confirmWorkoutDeletionWithText:@"Deleting all metrics will delete the work out.\n Are you sure you want to delete it?"];
+            [self confirmWorkoutDeletionWithText:@"Deleting all metrics will delete the workout.\n Are you sure you want to delete it?"];
             //Restore the value in text field if user choses to cancel
         }
         else {
@@ -556,7 +556,7 @@
 
 - (void)deleteButtonPressed:(UIButton *)sender
 {
-    [self confirmWorkoutDeletionWithText:@"The work out will be deleted."];
+    [self confirmWorkoutDeletionWithText:@"The workout will be deleted."];
 }
 
 #pragma mark - Methods accessing store

@@ -53,7 +53,7 @@
         [formatterForGettingMonthNumber setDateFormat:@"MMMM"];
         NSDate *dateForGettingMonthNumber = [formatterForGettingMonthNumber dateFromString:monthInMonthRowText];
         NSDateComponents *monthNumber = [[NSCalendar currentCalendar] components:NSMonthCalendarUnit fromDate:dateForGettingMonthNumber];
-
+        
         NSCalendar *currentCalendar = [NSCalendar currentCalendar];
         NSDateComponents *date1Components = [[NSDateComponents alloc] init];
         [date1Components setDay:1];
@@ -69,9 +69,9 @@
         nextMonthComponents.month = 1;
         NSDate *date2 = [currentCalendar dateByAddingComponents:nextMonthComponents toDate:date1 options:0];
         
-
+        
         fetchRequest.predicate = [NSPredicate predicateWithFormat:@"(workoutDate >= %@) AND (workoutDate < %@)", date1, date2];
-
+        
         NSSortDescriptor *workoutDateDescriptor = [[NSSortDescriptor alloc] initWithKey:@"workoutDate" ascending:NO];
         NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:workoutDateDescriptor, nil];
         [fetchRequest setSortDescriptors:sortDescriptors];
@@ -116,7 +116,7 @@
         self.monthRowText = monthAndYear;
         
     }
-
+    
     self.monthPickerView = [[MonthPickerView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.size.height*0.7, self.view.frame.size.width, self.view.frame.size.height*0.3) andContext:self.managedObjectContext];
     self.monthPickerView.dataSource = self.monthPickerView;
     self.monthPickerView.delegate = self.monthPickerView;
@@ -132,7 +132,7 @@
     
     [self executeFetch];
     [self.tableView reloadData];
-
+    
     
     if ([self tableView:self.tableView numberOfRowsInSection:0] == 1 &&
         [self.monthPickerView pickerView:self.monthPickerView numberOfRowsInComponent:0] > 0){
@@ -189,8 +189,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    static NSString *CellIdentifier = @"Workouts Done on Date Cell";
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    //    static NSString *CellIdentifier = @"Workouts Done on Date Cell";
+    //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:nil];
     
@@ -214,7 +214,7 @@
         cell.textLabel.text = [self.variousUniqueFormattedDays objectAtIndex:(indexPath.row-1)];
         
         int workoutsCountForCell = [[self.variousUniqueFormattedDaysCount objectAtIndex:(indexPath.row-1)] intValue];
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%d work outs", workoutsCountForCell];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%d workouts", workoutsCountForCell];
     }
     
     return cell;

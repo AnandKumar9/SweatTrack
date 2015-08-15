@@ -34,6 +34,10 @@
     [fetchRequest setReturnsDistinctResults:YES];
     [fetchRequest setPropertiesToFetch:[NSArray arrayWithObject:@"workoutDate"]];
     
+    NSSortDescriptor *workoutDateDescriptor = [[NSSortDescriptor alloc] initWithKey:@"workoutDate" ascending:NO];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:workoutDateDescriptor, nil];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
     NSError *error;
     // Create and initialize the fetch results controller.
     NSArray *allDateValuesInStore = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
@@ -47,18 +51,18 @@
    {
        NSDateComponents *dateComponents = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit |           NSYearCalendarUnit fromDate:[workoutDateDictionary valueForKey:@"workoutDate"]];   
        
-       NSDate *monthComponent = [dateFormatter dateFromString:[NSString stringWithFormat:@"%d",[dateComponents month]]];
+       NSDate *monthComponent = [dateFormatter dateFromString:[NSString stringWithFormat:@"%d", [dateComponents month]]];
        int yearComponent = [dateComponents year];
  
        NSString *monthAndYear = [monthFormatter stringFromDate:monthComponent];
        monthAndYear = [monthAndYear stringByAppendingString:@" "];
-       monthAndYear = [monthAndYear stringByAppendingString:[NSString stringWithFormat:@"%d",yearComponent]];
+       monthAndYear = [monthAndYear stringByAppendingString:[NSString stringWithFormat:@"%d", yearComponent]];
        if (![self.uniqueMonthsInStore containsObject:monthAndYear]) {
            [self.uniqueMonthsInStore addObject:monthAndYear];
        }
    }
     
-    self.uniqueMonthsInStore = (NSMutableArray *)[[self.uniqueMonthsInStore reverseObjectEnumerator] allObjects];
+//    self.uniqueMonthsInStore = (NSMutableArray *)[[self.uniqueMonthsInStore reverseObjectEnumerator] allObjects];
 }
 
 - (id)initWithFrame:(CGRect)frame andContext:(NSManagedObjectContext *)context

@@ -189,10 +189,8 @@
     UINavigationController *rootNavigationController = (UINavigationController *)[[tabBarController viewControllers] objectAtIndex:0];
     EnterWorkoutDetailsViewController *firstViewController = (EnterWorkoutDetailsViewController *)[rootNavigationController topViewController];
 
-    
     UINavigationController *secondNavigationController = (UINavigationController *)[[tabBarController viewControllers] objectAtIndex:1];
     SelectedMonthDetailsViewController *secondViewController = (SelectedMonthDetailsViewController *)[secondNavigationController topViewController];
-    
     
     UINavigationController *thirdNavigationController = (UINavigationController *)[[tabBarController viewControllers] objectAtIndex:2];
     WorkoutTypesViewController *thirdViewController = (WorkoutTypesViewController *)[thirdNavigationController topViewController];
@@ -218,6 +216,24 @@
     secondViewController.managedObjectContext = context;
     thirdViewController.managedObjectContext = context;
     fourthViewController.managedObjectContext = context;
+    
+    
+    if (![defaults objectForKey:@"appLaunchCountSinceLastPrompt"]) {
+        [defaults setObject:nil forKey:@"appLastReviewVersion"];
+        [defaults setObject:nil forKey:@"appLastReviewDate"];
+        [defaults setObject:nil forKey:@"appLastPromptDate"];
+        [defaults setObject:[NSNumber numberWithInt:0] forKey:@"appLaunchCountSinceLastPrompt"];
+        [defaults setObject:[NSNumber numberWithInt:0] forKey:@"promptCountSinceLastReview"];
+        
+        [defaults synchronize];
+    }
+    
+    
+    NSNumber *appLaunchCountSinceLastPrompt = [defaults objectForKey:@"appLaunchCountSinceLastPrompt"];
+    [defaults setObject:[NSNumber numberWithInt:([appLaunchCountSinceLastPrompt intValue]+1)] forKey:@"appLaunchCountSinceLastPrompt"];
+    [defaults synchronize];
+    
+    [self checkAndPromtUserForReviewIfNeeded];
 
     return YES;
 }
@@ -306,6 +322,82 @@
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+
+#pragma mark - User Review Prompt methods
+
+- (void)checkAndPromtUserForReviewIfNeeded
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+    NSDate *appLastReviewDate = [defaults objectForKey:@"appLastReviewDate"];
+    NSDate *appLastPromptDate = [defaults objectForKey:@"appLastPromptDate"];
+    NSNumber *appLaunchCountSinceLastPrompt = [defaults objectForKey:@"appLaunchCountSinceLastPrompt"];
+    NSNumber *promptCountSinceLastReview = [defaults objectForKey:@"promptCountSinceLastReview"];
+    
+    int appLaunchLimitBeforePromptingAgain;
+    
+    if (!appLastReviewDate) {
+        if ([promptCountSinceLastReview intValue] < 4)
+            appLaunchLimitBeforePromptingAgain = 6;
+        else
+            appLaunchLimitBeforePromptingAgain = 12;
+        
+        NSTimeInterval daysSinceLastPrompt = [[NSDate date] timeIntervalSinceDate:appLastPromptDate]/(24*60*60);
+        
+        BOOL userHasBeenPromptedBefore = YES;
+        if (isnan(daysSinceLastPrompt)) {
+            userHasBeenPromptedBefore = NO;
+        }
+        
+        if ([appLaunchCountSinceLastPrompt intValue] >= appLaunchLimitBeforePromptingAgain ) {
+            if (userHasBeenPromptedBefore == NO || daysSinceLastPrompt >= 5) {
+                UIAlertView *alertView = [[UIAlertView alloc] init];
+                [alertView setMessage:@"Hi, you've probably been using this app quite a bit. We would love to know what you think about it.\n\nWould you like to rate or review it on App Store?"];
+                [alertView setDelegate:self];
+                [alertView addButtonWithTitle:@"Not yet."];
+                [alertView addButtonWithTitle:@"Yes sure!"];
+                [alertView show];
+            }
+        }
+        
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    [defaults setObject:[NSDate date] forKey:@"appLastPromptDate"];
+    [defaults setObject:[NSNumber numberWithInt:0] forKey:@"appLaunchCountSinceLastPrompt"];
+    [defaults synchronize];
+    
+    if (buttonIndex == 1) {
+        
+        [defaults setObject:[NSNumber numberWithInt:0] forKey:@"appLaunchCountSinceLastPrompt"];
+        [defaults setObject:[NSNumber numberWithInt:0] forKey:@"promptCountSinceLastReview"];
+        
+        [defaults setObject:[NSDate date] forKey:@"appLastReviewDate"];
+        
+        NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+        NSString *majorVersion = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+                
+        [defaults setObject:majorVersion forKey:@"appLastReviewVersion"];
+        
+        [defaults synchronize];
+        
+        NSString *appURL = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=536051158";
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:appURL]];
+    }
+    
+    if (buttonIndex == 0) {
+        
+        NSNumber *promptCountSinceLastReview = [defaults objectForKey:@"promptCountSinceLastReview"];
+        [defaults setObject:[NSNumber numberWithInt:([promptCountSinceLastReview intValue]+1)] forKey:@"promptCountSinceLastReview"];
+        
+        [defaults synchronize];
+    }
 }
 
 @end

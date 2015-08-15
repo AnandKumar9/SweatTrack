@@ -54,7 +54,7 @@
     // Configure the cell...
     WorkoutTemplates *workoutTemplate = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = workoutTemplate.workoutTemplateName;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%u work outs", workoutTemplate.workoutTypesIncluded.count];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%u workouts", workoutTemplate.workoutTypesIncluded.count];
     
     return cell;
 }

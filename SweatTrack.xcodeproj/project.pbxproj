@@ -30,6 +30,7 @@
 		172B552E155F3C2800C75807 /* WorkoutTypeSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 172B552D155F3C2800C75807 /* WorkoutTypeSettingsViewController.m */; };
 		1731C8451566099D001CCE78 /* WorkoutTypePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1731C8441566099D001CCE78 /* WorkoutTypePickerView.m */; };
 		173801481574997200D57B72 /* DelimiterKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 173801471574997200D57B72 /* DelimiterKeys.m */; };
+		1749BAC1164257CB0004A4AD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1749BAC0164257CB0004A4AD /* Default-568h@2x.png */; };
 		1761BE4D157C35D800A473D1 /* WorkoutTemplateDefaultValuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1761BE4C157C35D800A473D1 /* WorkoutTemplateDefaultValuesViewController.m */; };
 		1762A0401562C4D800EAE8A8 /* SelectedWorkoutDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1762A03F1562C4D800EAE8A8 /* SelectedWorkoutDetailsViewController.m */; };
 		1789093915898541002E0D4A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1789093815898541002E0D4A /* Default@2x.png */; };
@@ -96,6 +97,7 @@
 		1731C8441566099D001CCE78 /* WorkoutTypePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutTypePickerView.m; sourceTree = "<group>"; };
 		173801461574997200D57B72 /* DelimiterKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelimiterKeys.h; sourceTree = "<group>"; };
 		173801471574997200D57B72 /* DelimiterKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DelimiterKeys.m; sourceTree = "<group>"; };
+		1749BAC0164257CB0004A4AD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		1761BE4B157C35D800A473D1 /* WorkoutTemplateDefaultValuesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutTemplateDefaultValuesViewController.h; sourceTree = "<group>"; };
 		1761BE4C157C35D800A473D1 /* WorkoutTemplateDefaultValuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutTemplateDefaultValuesViewController.m; sourceTree = "<group>"; };
 		1762A03E1562C4D800EAE8A8 /* SelectedWorkoutDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedWorkoutDetailsViewController.h; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 		172B5504155F32B100C75807 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1749BAC0164257CB0004A4AD /* Default-568h@2x.png */,
 				17A8AAD615857E20005D5885 /* Dumbbell.png */,
 				17A8AAE215857F5B005D5885 /* EKG.png */,
 				17A8AAD715857E20005D5885 /* Pencil.png */,
@@ -376,6 +379,7 @@
 				17957E0615858B71005F7834 /* Original Image copy 2.png in Resources */,
 				1789093915898541002E0D4A /* Default@2x.png in Resources */,
 				1789093C1589854A002E0D4A /* Default.png in Resources */,
+				1749BAC1164257CB0004A4AD /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +454,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -468,6 +473,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

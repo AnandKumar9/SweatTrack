@@ -272,7 +272,7 @@
         if ([enteredText caseInsensitiveCompare:@""] == NSOrderedSame) {
             if ([self.workoutType.workoutMetric2Name caseInsensitiveCompare:@""] == NSOrderedSame) {
                 textField.text = self.workoutType.workoutMetric1Name;
-                self.labelInWarningRow.text = @"Every work out needs at least one metric.";
+                self.labelInWarningRow.text = @"Every workout needs at least one metric.";
             }
             else {
                 //Handle metric deletion. This should also reorder the metrics in the table
@@ -403,7 +403,7 @@
 
 - (void)deleteButtonPressed:(UIButton *)sender
 {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Are you sure you want to delete this work out?\n\nThis will also delete all its associated records.\nYou can instead keep it as hidden."
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Are you sure you want to delete this workout?\n\nThis will also delete all its associated records.\nYou can instead keep it as hidden."
                                         delegate:self
                                cancelButtonTitle:@"Cancel"
                           destructiveButtonTitle:@"Delete"

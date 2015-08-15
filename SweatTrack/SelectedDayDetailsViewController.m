@@ -82,7 +82,7 @@
     if (![workoutDone.workoutMetric1Name isEqualToString:@""]) {
         if (![workoutDone.workoutMetric1Value isEqualToString:@""]) {
             tempString = [tempString stringByAppendingString:workoutDone.workoutMetric1Value];
-            if (![[NSString stringWithFormat:@"%f", workoutDone.workoutMetric1Unit] isEqualToString:@""]) {
+            if (![[NSString stringWithFormat:@"%@", workoutDone.workoutMetric1Unit] isEqualToString:@""]) {
                 tempString = [tempString stringByAppendingString:@" "];
                 if (![workoutDone.workoutMetric1Unit isEqualToString:@""]) {
                     tempString = [tempString stringByAppendingString:[workoutDone.workoutMetric1Unit lowercaseString]];
@@ -98,7 +98,7 @@
     if (![workoutDone.workoutMetric2Name isEqualToString:@""]) {
         if (![workoutDone.workoutMetric2Value isEqualToString:@""]) {
             tempString = [tempString stringByAppendingString:workoutDone.workoutMetric2Value];
-            if (![[NSString stringWithFormat:@"%f", workoutDone.workoutMetric2Unit] isEqualToString:@""]) {
+            if (![[NSString stringWithFormat:@"%@", workoutDone.workoutMetric2Unit] isEqualToString:@""]) {
                 tempString = [tempString stringByAppendingString:@" "];
                 if (![workoutDone.workoutMetric2Unit isEqualToString:@""]) {
                     tempString = [tempString stringByAppendingString:[workoutDone.workoutMetric2Unit lowercaseString]];
@@ -114,7 +114,7 @@
     if (![workoutDone.workoutMetric3Name isEqualToString:@""]) {
         if (![workoutDone.workoutMetric3Value isEqualToString:@""]) {
             tempString = [tempString stringByAppendingString:workoutDone.workoutMetric3Value];
-            if (![[NSString stringWithFormat:@"%f", workoutDone.workoutMetric3Unit] isEqualToString:@""]) {
+            if (![[NSString stringWithFormat:@"%@", workoutDone.workoutMetric3Unit] isEqualToString:@""]) {
                 tempString = [tempString stringByAppendingString:@" "];
                 if (![workoutDone.workoutMetric3Unit isEqualToString:@""]) {
                     tempString = [tempString stringByAppendingString:[workoutDone.workoutMetric3Unit lowercaseString]];

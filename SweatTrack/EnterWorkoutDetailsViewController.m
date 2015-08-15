@@ -523,7 +523,7 @@
         }
         
         else if (self.templateWorkoutScreenShown.boolValue == NO) {
-            cell.textLabel.text = @"Work out";
+            cell.textLabel.text = @"Workout";
             
             self.workoutTypePickedLabel = [[UILabel alloc] init]; 
             CGRect frame = CGRectMake(108.0, 9.0, 180.0, 27.0);
@@ -917,7 +917,7 @@
                 
                 break;
             }
-        }//Iterate through all the objects in stateData1 and check if the current work out type has already been added to stateData1. Also if it has been added but any of its metrics not edited, populate that metric with current template's default value.
+        }//Iterate through all the objects in stateData1 and check if the current workout type has already been added to stateData1. Also if it has been added but any of its metrics not edited, populate that metric with current template's default value.
         
         if (workoutTypeAlreadyPresentInState1 == NO) {
             NSMutableDictionary *tempDictionary = [[NSMutableDictionary alloc] init];
@@ -930,9 +930,9 @@
             [tempDictionary setValue:[NSNumber numberWithBool:NO] forKey:@"workoutMetric3ValueEdited"];
             
             [self.stateData1 addObject:tempDictionary];
-        }//If the current work out type has not been added to stateData1, add it along with the default values
+        }//If the current workout type has not been added to stateData1, add it along with the default values
         
-    }//Iterate through all workout types in selected work out template
+    }//Iterate through all workout types in selected workout template
 }
 
 - (void)updateValueInStateData1:(UITextField *)textField

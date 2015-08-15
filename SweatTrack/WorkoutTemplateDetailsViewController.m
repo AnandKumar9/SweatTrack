@@ -622,7 +622,7 @@
 
 - (void)deleteButtonPressed:(UIButton *)sender
 {
-    [self confirmWorkoutTemplateDeletionWithText:@"Are you sure you want to delete this work out template?"];
+    [self confirmWorkoutTemplateDeletionWithText:@"Are you sure you want to delete this workout template?"];
 }
 
 - (void)confirmWorkoutTemplateDeletionWithText:(NSString *)confirmationText
