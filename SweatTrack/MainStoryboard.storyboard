@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="rOv-jw-Wkd">
+    <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <development defaultVersion="4200" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller - Work out Types-->
+        <scene sceneID="3Nj-rm-bkK">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vvZ-gQ-slc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="mLn-yk-zQs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Work out Types" image="Dumbbell.png" id="zys-fW-snA"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="dQ1-ey-7RK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6lw-h5-OM4" kind="relationship" relationship="rootViewController" id="Bbd-eP-gah"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="778" y="880"/>
+        </scene>
+        <!--Workout Types View Controller - Work out Types-->
+        <scene sceneID="spg-FK-YeJ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j3W-CN-4sL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="6lw-h5-OM4" customClass="WorkoutTypesViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="QX7-NM-iTw">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Workout Type Cell" textLabel="V0i-3x-8eN" style="IBUITableViewCellStyleDefault" id="2os-R3-cgB">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V0i-3x-8eN">
+                                            <rect key="frame" x="10" y="0.0" width="267" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6lw-h5-OM4" id="Fke-4z-9FY"/>
+                            <outlet property="delegate" destination="6lw-h5-OM4" id="OeX-yj-sFH"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Work out Types" id="h65-0A-te8">
+                        <barButtonItem key="leftBarButtonItem" title="Hide Some" id="rEX-0g-bbo">
+                            <connections>
+                                <action selector="buttonForHiddenAttributePressed:" destination="6lw-h5-OM4" id="ttz-ch-hb7"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="Pfs-ns-IFt">
+                            <connections>
+                                <action selector="addWorkoutTypeButtonPressed:" destination="6lw-h5-OM4" id="k2w-O2-ZzE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="buttonForHiddenAttribute" destination="rEX-0g-bbo" id="8lc-yP-6Qb"/>
+                        <segue destination="zcX-xx-YJ7" kind="push" identifier="Show Workout Settings" id="rJP-Zb-AvT"/>
+                        <segue destination="2Kh-A2-Qa9" kind="push" identifier="Show Add Workout Type" id="nQP-aV-Fk9"/>
+                        <segue destination="giD-Ey-Dq3" kind="push" identifier="Show Workouts Done for a Type" id="tC7-Zh-3o7"/>
+                    </connections>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="1192" y="880"/>
+        </scene>
+        <!--Workout Type Settings View Controller - Work out Settings-->
+        <scene sceneID="hh0-Lu-7Km">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5YE-vi-g1t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="zcX-xx-YJ7" customClass="WorkoutTypeSettingsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="ghi-g1-KBy">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Workout Settings Cell" textLabel="QFu-4q-ri1" detailTextLabel="Glf-kw-AHY" style="IBUITableViewCellStyleValue1" id="kGr-G0-C1s">
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QFu-4q-ri1">
+                                            <rect key="frame" x="10" y="11" width="35" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Glf-kw-AHY">
+                                            <rect key="frame" x="266" y="11" width="44" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="zcX-xx-YJ7" id="INa-Z8-cXn"/>
+                            <outlet property="delegate" destination="zcX-xx-YJ7" id="p27-OQ-ZjV"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Work out Settings" id="8OV-A6-PpZ"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="1740" y="1280"/>
+        </scene>
+        <!--Selected Workout Details View Controller-->
+        <scene sceneID="Xbo-74-aB7">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aA6-eO-Pbl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="giD-Ey-Dq3" customClass="SelectedWorkoutDetailsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="J6y-Me-HDs">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Workout Done Details Cell" textLabel="P4s-Z3-3jw" detailTextLabel="z3M-iD-G9u" style="IBUITableViewCellStyleValue2" id="ZJ6-hG-dWW">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="P4s-Z3-3jw">
+                                            <rect key="frame" x="10" y="15" width="91" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <color key="textColor" red="0.32156862745098042" green="0.40000000000000002" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="z3M-iD-G9u">
+                                            <rect key="frame" x="107" y="12" width="41" height="19"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <segue destination="ecN-cR-f7e" kind="push" identifier="Edit Workout Details" id="Leo-ry-rGM"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="giD-Ey-Dq3" id="9JU-SU-ncJ"/>
+                            <outlet property="delegate" destination="giD-Ey-Dq3" id="1ti-Cz-EHq"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="wDm-9e-A5M"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="2204" y="887"/>
+        </scene>
+        <!--Enter Workout Details View Controller - Enter Work Out-->
+        <scene sceneID="H4E-Ta-dUH">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QuE-hf-l7Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="iQC-JT-iM6" customClass="EnterWorkoutDetailsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="4qA-73-6Vn">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Workout Details Cell" textLabel="OpB-CR-bDC" detailTextLabel="J0c-hK-6SD" style="IBUITableViewCellStyleValue1" id="0jO-7e-f9Y">
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OpB-CR-bDC">
+                                            <rect key="frame" x="10" y="11" width="35" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J0c-hK-6SD">
+                                            <rect key="frame" x="246" y="11" width="44" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="iQC-JT-iM6" id="JhY-3h-Lqm"/>
+                            <outlet property="delegate" destination="iQC-JT-iM6" id="dqN-gg-mlv"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Enter Work Out" id="FVk-RB-ZxO">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="d2q-Ak-XPR">
+                            <connections>
+                                <action selector="switchScreen:" destination="iQC-JT-iM6" id="Suf-kp-ZB4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="switchScreenBarButtonItem" destination="d2q-Ak-XPR" id="woA-ao-vFl"/>
+                    </connections>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="1186" y="-668"/>
+        </scene>
+        <!--Add Workout Type View Controller - Add Work out Type-->
+        <scene sceneID="hT6-K9-Roo">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MgV-5e-61G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="2Kh-A2-Qa9" customClass="AddWorkoutTypeViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="1aH-lJ-7cU">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Workout Settings Cell" textLabel="6W5-IH-cPy" detailTextLabel="fsF-BL-seY" style="IBUITableViewCellStyleValue1" id="OTW-Yc-tgt">
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6W5-IH-cPy">
+                                            <rect key="frame" x="10" y="11" width="35" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fsF-BL-seY">
+                                            <rect key="frame" x="266" y="11" width="44" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2Kh-A2-Qa9" id="MjW-gi-cZk"/>
+                            <outlet property="delegate" destination="2Kh-A2-Qa9" id="fhF-DT-pdy"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Add Work out Type" id="oSi-Ca-7Nq"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="1724" y="446"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="SQF-ZD-5lN">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VE4-Rf-5ya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController id="rOv-jw-Wkd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="4x0-O4-VcX">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="gqu-lX-rRe" kind="relationship" relationship="viewControllers" id="m6h-7S-qv2"/>
+                        <segue destination="KZh-yJ-r7f" kind="relationship" relationship="viewControllers" id="nGY-PL-su5"/>
+                        <segue destination="mLn-yk-zQs" kind="relationship" relationship="viewControllers" id="tSu-fW-DGj"/>
+                        <segue destination="IJf-yT-RTc" kind="relationship" relationship="viewControllers" id="UyB-C2-obb"/>
+                    </connections>
+                </tabBarController>
+            </objects>
+            <point key="canvasLocation" x="236" y="453"/>
+        </scene>
+        <!--Selected Month Details View Controller - Month Details-->
+        <scene sceneID="qLs-wa-cuZ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VSU-tF-83S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="guK-90-zZi" customClass="SelectedMonthDetailsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="nfG-XV-yNA">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Workouts Done on Date Cell" textLabel="dgu-nT-Hsf" detailTextLabel="AfV-U2-ngu" style="IBUITableViewCellStyleValue2" id="Das-Gs-CFb">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dgu-nT-Hsf">
+                                            <rect key="frame" x="10" y="14" width="91" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <color key="textColor" red="0.32156862745098042" green="0.40000000000000002" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AfV-U2-ngu">
+                                            <rect key="frame" x="107" y="12" width="41" height="19"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="guK-90-zZi" id="WCa-YZ-x6p"/>
+                            <outlet property="delegate" destination="guK-90-zZi" id="Xtj-SO-rHl"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Month Details" id="P42-1w-0Ck"/>
+                    <connections>
+                        <segue destination="UgC-oo-eRf" kind="push" identifier="Show Selected Day Details" id="iJF-xy-eHZ"/>
+                    </connections>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="1192" y="2"/>
+        </scene>
+        <!--Workout Templates View Controller - Work out Templates-->
+        <scene sceneID="p3k-pv-UKc">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PGr-Sv-ldW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="MDx-WS-myn" customClass="WorkoutTemplatesViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Pg7-SK-3db">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Workout Template Name Cell" textLabel="30O-p5-7ZI" detailTextLabel="KX9-en-8XL" style="IBUITableViewCellStyleValue2" id="I8M-qy-bRl">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="30O-p5-7ZI">
+                                            <rect key="frame" x="10" y="15" width="91" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <color key="textColor" red="0.32156862745098042" green="0.40000000000000002" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KX9-en-8XL">
+                                            <rect key="frame" x="107" y="12" width="41" height="19"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <segue destination="OMq-l9-ZfL" kind="push" identifier="Show Workout Template Details" id="K19-gl-Ngx"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="MDx-WS-myn" id="lh6-0C-dZj"/>
+                            <outlet property="delegate" destination="MDx-WS-myn" id="hmc-Gc-M2n"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Work out Templates" id="ymf-zZ-77C">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="oHh-bM-fr9">
+                            <connections>
+                                <action selector="addWorkoutTemplateButtonPressed:" destination="MDx-WS-myn" id="sVH-RG-oMt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="OMq-l9-ZfL" kind="push" identifier="Add Workout Template" id="oNr-hm-U8c"/>
+                    </connections>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="1200" y="1918"/>
+        </scene>
+        <!--Workout Template Details View Controller-->
+        <scene sceneID="3Vu-gf-ZqW">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DO4-FD-76r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="OMq-l9-ZfL" customClass="WorkoutTemplateDetailsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="eEx-Bc-yhC">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Workout Type Cell" textLabel="fYV-pW-inx" style="IBUITableViewCellStyleDefault" id="69O-Ym-kUC">
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fYV-pW-inx">
+                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="OMq-l9-ZfL" id="4Tf-by-D1I"/>
+                            <outlet property="delegate" destination="OMq-l9-ZfL" id="kMU-t8-EdS"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="0fv-37-SC1"/>
+                    <connections>
+                        <segue destination="kds-qD-Zpu" kind="push" identifier="Set Template Default Values" id="LR4-oJ-xmg"/>
+                    </connections>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="1756" y="1918"/>
+        </scene>
+        <!--Selected Day Details View Controller-->
+        <scene sceneID="vi9-6s-9wv">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JtI-TA-mcc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="UgC-oo-eRf" customClass="SelectedDayDetailsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="oEb-Rd-fFX">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Every Workout on a Day Cell" textLabel="add-r0-57M" detailTextLabel="bo4-Oi-Keb" style="IBUITableViewCellStyleValue2" id="GTb-P1-0u7">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="add-r0-57M">
+                                            <rect key="frame" x="10" y="15" width="91" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <color key="textColor" red="0.32156862745098042" green="0.40000000000000002" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bo4-Oi-Keb">
+                                            <rect key="frame" x="107" y="12" width="41" height="19"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <segue destination="ecN-cR-f7e" kind="push" identifier="Edit Workout Details" id="j4g-X5-Slv"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="UgC-oo-eRf" id="g1f-GT-pRi"/>
+                            <outlet property="delegate" destination="UgC-oo-eRf" id="SaH-Y8-cws"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="NKE-Iv-62z"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="2192" y="2"/>
+        </scene>
+        <!--Workout Template Default Values View Controller - Default Values-->
+        <scene sceneID="EiC-hw-Q16">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wVD-OA-Hd7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="kds-qD-Zpu" customClass="WorkoutTemplateDefaultValuesViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="QJe-uc-Ei2">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Workout Details Cell" textLabel="53r-bQ-TcC" detailTextLabel="Utc-8i-mpc" style="IBUITableViewCellStyleValue1" id="sTN-6y-yqf">
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="53r-bQ-TcC">
+                                            <rect key="frame" x="10" y="11" width="35" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Utc-8i-mpc">
+                                            <rect key="frame" x="246" y="11" width="44" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kds-qD-Zpu" id="yM1-vZ-7Ih"/>
+                            <outlet property="delegate" destination="kds-qD-Zpu" id="jlA-bZ-bru"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Default Values" id="1KV-vO-m1c"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="2246" y="1932"/>
+        </scene>
+        <!--Edit Workout Details View Controller - Work out Details-->
+        <scene sceneID="UbW-hz-oc2">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rcj-65-tnW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="ecN-cR-f7e" customClass="EditWorkoutDetailsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="btw-ej-w3O">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Workout Details Cell" textLabel="VcB-7O-e2s" detailTextLabel="ESd-qq-jSe" style="IBUITableViewCellStyleValue1" id="E4Z-10-EXK">
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VcB-7O-e2s">
+                                            <rect key="frame" x="10" y="11" width="35" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ESd-qq-jSe">
+                                            <rect key="frame" x="266" y="11" width="44" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ecN-cR-f7e" id="wUg-PR-WNy"/>
+                            <outlet property="delegate" destination="ecN-cR-f7e" id="2k9-Dd-6fg"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Work out Details" id="VW6-Uh-6b2"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="2922" y="414"/>
+        </scene>
+        <!--Navigation Controller - Month Details-->
+        <scene sceneID="jC2-cL-m57">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bT3-D7-y8u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="KZh-yJ-r7f" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Month Details" image="EKG.png" id="vji-cH-oB8"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="CPm-yi-7Eh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="guK-90-zZi" kind="relationship" relationship="rootViewController" id="MJG-6K-F5A"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="778" y="2"/>
+        </scene>
+        <!--Navigation Controller - Enter Work Out-->
+        <scene sceneID="Pmu-9i-ZWq">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B6F-EE-xgD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="gqu-lX-rRe" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Enter Work Out" image="Pencil.png" id="wQj-HJ-Gwk"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="iWL-Hl-Uu2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="iQC-JT-iM6" kind="relationship" relationship="rootViewController" id="0Q2-8n-vsw"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="764" y="-676"/>
+        </scene>
+        <!--Navigation Controller - Templates-->
+        <scene sceneID="SCL-NQ-r93">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yDg-c3-Jpd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="IJf-yT-RTc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Templates" image="Star.png" id="WnN-aa-Sfe"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="tko-nY-sXZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MDx-WS-myn" kind="relationship" relationship="rootViewController" id="Nfg-8d-gq9"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="778" y="1918"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Dumbbell.png" width="28" height="10"/>
+        <image name="EKG.png" width="26" height="22"/>
+        <image name="Pencil.png" width="23" height="23"/>
+        <image name="Star.png" width="26" height="26"/>
+    </resources>
+    <classes>
+        <class className="AddWorkoutTypeViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddWorkoutTypeViewController.h"/>
+        </class>
+        <class className="CoreDataTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataTableViewController.h"/>
+        </class>
+        <class className="EditWorkoutDetailsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditWorkoutDetailsViewController.h"/>
+        </class>
+        <class className="EnterWorkoutDetailsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EnterWorkoutDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="switchScreen:"/>
+                <relationship kind="outlet" name="switchScreenBarButtonItem" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="SelectedDayDetailsViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SelectedDayDetailsViewController.h"/>
+        </class>
+        <class className="SelectedMonthDetailsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SelectedMonthDetailsViewController.h"/>
+        </class>
+        <class className="SelectedWorkoutDetailsViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SelectedWorkoutDetailsViewController.h"/>
+        </class>
+        <class className="WorkoutTemplateDefaultValuesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WorkoutTemplateDefaultValuesViewController.h"/>
+        </class>
+        <class className="WorkoutTemplateDetailsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WorkoutTemplateDetailsViewController.h"/>
+        </class>
+        <class className="WorkoutTemplatesViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WorkoutTemplatesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addWorkoutTemplateButtonPressed:"/>
+            </relationships>
+        </class>
+        <class className="WorkoutTypeSettingsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WorkoutTypeSettingsViewController.h"/>
+        </class>
+        <class className="WorkoutTypesViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WorkoutTypesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addWorkoutTypeButtonPressed:"/>
+                <relationship kind="action" name="buttonForHiddenAttributePressed:"/>
+                <relationship kind="outlet" name="buttonForHiddenAttribute" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="Leo-ry-rGM"/>
+        <segue reference="oNr-hm-U8c"/>
+    </inferredMetricsTieBreakers>
+</document>

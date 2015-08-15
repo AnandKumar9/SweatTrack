@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11E53" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="WorkoutsDone" representedClassName="WorkoutsDone" syncable="YES">
+        <attribute name="workoutDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="workoutMetric1Name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="workoutMetric1Unit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="workoutMetric1Value" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="workoutMetric2Name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="workoutMetric2Unit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="workoutMetric2Value" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="workoutMetric3Name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="workoutMetric3Unit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="workoutMetric3Value" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="workoutTimeZoneName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="workoutType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutTypes" inverseName="workoutsDone" inverseEntity="WorkoutTypes" syncable="YES"/>
+    </entity>
+    <entity name="WorkoutTemplates" representedClassName="WorkoutTemplates" syncable="YES">
+        <attribute name="workoutTemplateName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="workoutTypesDefaultValues" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="workoutTypesOrder" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="workoutTypesIncluded" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WorkoutTypes" inverseName="workoutTemplatesReferredToIn" inverseEntity="WorkoutTypes" syncable="YES"/>
+    </entity>
+    <entity name="WorkoutTypes" representedClassName="WorkoutTypes" syncable="YES">
+        <attribute name="workoutHiddenByDefault" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="workoutMetric1DefaultUnit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="workoutMetric1Name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="workoutMetric2DefaultUnit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="workoutMetric2Name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="workoutMetric3DefaultUnit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="workoutMetric3Name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="workoutName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="workoutsDone" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="WorkoutsDone" inverseName="workoutType" inverseEntity="WorkoutsDone" syncable="YES"/>
+        <relationship name="workoutTemplatesReferredToIn" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WorkoutTemplates" inverseName="workoutTypesIncluded" inverseEntity="WorkoutTemplates" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="WorkoutsDone" positionX="142" positionY="6" width="128" height="225"/>
+        <element name="WorkoutTemplates" positionX="-299" positionY="45" width="128" height="105"/>
+        <element name="WorkoutTypes" positionX="-90" positionY="-9" width="153" height="195"/>
+    </elements>
+</model>
