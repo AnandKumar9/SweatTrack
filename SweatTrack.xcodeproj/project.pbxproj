@@ -34,7 +34,6 @@
 		1762A0401562C4D800EAE8A8 /* SelectedWorkoutDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1762A03F1562C4D800EAE8A8 /* SelectedWorkoutDetailsViewController.m */; };
 		1789093915898541002E0D4A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1789093815898541002E0D4A /* Default@2x.png */; };
 		1789093C1589854A002E0D4A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1789093B1589854A002E0D4A /* Default.png */; };
-		17957E0615858B71005F7834 /* Original Image copy 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 17957E0515858B71005F7834 /* Original Image copy 2.png */; };
 		17A44DAF1564832A009AD36F /* SelectedDayDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A44DAE1564832A009AD36F /* SelectedDayDetailsViewController.m */; };
 		17A8AADC15857E20005D5885 /* Dumbbell.png in Resources */ = {isa = PBXBuildFile; fileRef = 17A8AAD615857E20005D5885 /* Dumbbell.png */; };
 		17A8AADD15857E20005D5885 /* Pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 17A8AAD715857E20005D5885 /* Pencil.png */; };
@@ -54,6 +53,10 @@
 		17DE3A64156B22E1003C6EF8 /* EnterWorkoutDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17DE3A63156B22E1003C6EF8 /* EnterWorkoutDetailsViewController.m */; };
 		17F64364156C047C00F0E8D7 /* DatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F64363156C047C00F0E8D7 /* DatePickerView.m */; };
 		17F64369156C481C00F0E8D7 /* WorkoutTemplatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F64368156C481B00F0E8D7 /* WorkoutTemplatePickerView.m */; };
+		ACAEE5956667869C31968212 /* libPods-SweatTrack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2506DF18AFC970A8D15B44A8 /* libPods-SweatTrack.a */; };
+		B3C7D92C1B8EAF8200B241B0 /* NewStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3C7D92B1B8EAF8200B241B0 /* NewStoryboard.storyboard */; };
+		B3C7D92E1B8EB3BF00B241B0 /* Original Image copy 2.png in Resources */ = {isa = PBXBuildFile; fileRef = B3C7D92D1B8EB3BF00B241B0 /* Original Image copy 2.png */; };
+		B3C7D9301B8EB71300B241B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3C7D92F1B8EB71300B241B0 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,7 +107,6 @@
 		1762A03F1562C4D800EAE8A8 /* SelectedWorkoutDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedWorkoutDetailsViewController.m; sourceTree = "<group>"; };
 		1789093815898541002E0D4A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		1789093B1589854A002E0D4A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		17957E0515858B71005F7834 /* Original Image copy 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Original Image copy 2.png"; sourceTree = "<group>"; };
 		17A44DAD1564832A009AD36F /* SelectedDayDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedDayDetailsViewController.h; sourceTree = "<group>"; };
 		17A44DAE1564832A009AD36F /* SelectedDayDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedDayDetailsViewController.m; sourceTree = "<group>"; };
 		17A8AAD615857E20005D5885 /* Dumbbell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dumbbell.png; sourceTree = "<group>"; };
@@ -136,6 +138,12 @@
 		17F64363156C047C00F0E8D7 /* DatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerView.m; sourceTree = "<group>"; };
 		17F64367156C481B00F0E8D7 /* WorkoutTemplatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutTemplatePickerView.h; sourceTree = "<group>"; };
 		17F64368156C481B00F0E8D7 /* WorkoutTemplatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutTemplatePickerView.m; sourceTree = "<group>"; };
+		2506DF18AFC970A8D15B44A8 /* libPods-SweatTrack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SweatTrack.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		691486E4920191F0A2914C0E /* Pods-SweatTrack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SweatTrack.release.xcconfig"; path = "Pods/Target Support Files/Pods-SweatTrack/Pods-SweatTrack.release.xcconfig"; sourceTree = "<group>"; };
+		B3C7D92B1B8EAF8200B241B0 /* NewStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewStoryboard.storyboard; sourceTree = "<group>"; };
+		B3C7D92D1B8EB3BF00B241B0 /* Original Image copy 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Original Image copy 2.png"; sourceTree = "<group>"; };
+		B3C7D92F1B8EB71300B241B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EEBB1A3251D556100E7A0560 /* Pods-SweatTrack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SweatTrack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SweatTrack/Pods-SweatTrack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +157,7 @@
 				172B5502155F32B100C75807 /* CoreData.framework in Frameworks */,
 				17C88B0316A8AB25009EFAD6 /* libGoogleAnalytics.a in Frameworks */,
 				17C88B0816A8AC38009EFAD6 /* SystemConfiguration.framework in Frameworks */,
+				ACAEE5956667869C31968212 /* libPods-SweatTrack.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +186,7 @@
 				17F64366156C049100F0E8D7 /* Previous Files */,
 				172B54FA155F32B100C75807 /* Frameworks */,
 				172B54F8155F32B100C75807 /* Products */,
+				4742936F6B2B16C80280239A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -196,6 +206,7 @@
 				172B54FD155F32B100C75807 /* Foundation.framework */,
 				172B54FF155F32B100C75807 /* CoreGraphics.framework */,
 				172B5501155F32B100C75807 /* CoreData.framework */,
+				2506DF18AFC970A8D15B44A8 /* libPods-SweatTrack.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -208,6 +219,7 @@
 				172B550C155F32B100C75807 /* AppDelegate.h */,
 				172B550D155F32B100C75807 /* AppDelegate.m */,
 				172B550F155F32B100C75807 /* SweatTrack.xcdatamodeld */,
+				B3C7D92B1B8EAF8200B241B0 /* NewStoryboard.storyboard */,
 				172B5517155F32E700C75807 /* MainStoryboard.storyboard */,
 				175666F71565E7E800D0043D /* Add/Delete/Edit Workout Details */,
 				17C6EC8515631ACE00099E95 /* Workouts in Month Tab */,
@@ -223,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				17C88B0516A8AB2C009EFAD6 /* Google Analytics */,
+				B3C7D92F1B8EB71300B241B0 /* Assets.xcassets */,
 				17A8AAD615857E20005D5885 /* Dumbbell.png */,
 				17A8AAE215857F5B005D5885 /* EKG.png */,
 				17A8AAD715857E20005D5885 /* Pencil.png */,
@@ -235,7 +248,7 @@
 				17A8AAF9158587CC005D5885 /* Icon-Small-50.png */,
 				17A8AAFA158587CD005D5885 /* Icon-Small@2x.png */,
 				17A8AAFB158587CD005D5885 /* Icon@2x.png */,
-				17957E0515858B71005F7834 /* Original Image copy 2.png */,
+				B3C7D92D1B8EB3BF00B241B0 /* Original Image copy 2.png */,
 				172B5505155F32B100C75807 /* SweatTrack-Info.plist */,
 				172B5506155F32B100C75807 /* InfoPlist.strings */,
 				172B5509155F32B100C75807 /* main.m */,
@@ -337,6 +350,15 @@
 			path = SweatTrack;
 			sourceTree = "<group>";
 		};
+		4742936F6B2B16C80280239A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EEBB1A3251D556100E7A0560 /* Pods-SweatTrack.debug.xcconfig */,
+				691486E4920191F0A2914C0E /* Pods-SweatTrack.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -344,9 +366,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 172B5514155F32B100C75807 /* Build configuration list for PBXNativeTarget "SweatTrack" */;
 			buildPhases = (
+				B1FEA4EA00974B5201A936CF /* Check Pods Manifest.lock */,
 				172B54F3155F32B100C75807 /* Sources */,
 				172B54F4155F32B100C75807 /* Frameworks */,
 				172B54F5155F32B100C75807 /* Resources */,
+				9D7C8EBA0042A639035FD283 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -388,9 +412,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				172B5508155F32B100C75807 /* InfoPlist.strings in Resources */,
+				B3C7D92E1B8EB3BF00B241B0 /* Original Image copy 2.png in Resources */,
 				172B5518155F32E700C75807 /* MainStoryboard.storyboard in Resources */,
+				B3C7D92C1B8EAF8200B241B0 /* NewStoryboard.storyboard in Resources */,
 				17A8AADC15857E20005D5885 /* Dumbbell.png in Resources */,
 				17A8AADD15857E20005D5885 /* Pencil.png in Resources */,
+				B3C7D9301B8EB71300B241B0 /* Assets.xcassets in Resources */,
 				17A8AADE15857E20005D5885 /* Star.png in Resources */,
 				17A8AAE315857F5B005D5885 /* EKG.png in Resources */,
 				17A8AAFC158587CD005D5885 /* Icon.png in Resources */,
@@ -399,13 +426,45 @@
 				17A8AAFF158587CD005D5885 /* Icon-Small-50.png in Resources */,
 				17A8AB00158587CD005D5885 /* Icon-Small@2x.png in Resources */,
 				17A8AB01158587CD005D5885 /* Icon@2x.png in Resources */,
-				17957E0615858B71005F7834 /* Original Image copy 2.png in Resources */,
 				1789093915898541002E0D4A /* Default@2x.png in Resources */,
 				1789093C1589854A002E0D4A /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9D7C8EBA0042A639035FD283 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SweatTrack/Pods-SweatTrack-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1FEA4EA00974B5201A936CF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		172B54F3155F32B100C75807 /* Sources */ = {
@@ -504,12 +563,16 @@
 		};
 		172B5515155F32B100C75807 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EEBB1A3251D556100E7A0560 /* Pods-SweatTrack.debug.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SweatTrack/SweatTrack-Prefix.pch";
 				INFOPLIST_FILE = "SweatTrack/SweatTrack-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/SweatTrack\"",
@@ -523,12 +586,16 @@
 		};
 		172B5516155F32B100C75807 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 691486E4920191F0A2914C0E /* Pods-SweatTrack.release.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SweatTrack/SweatTrack-Prefix.pch";
 				INFOPLIST_FILE = "SweatTrack/SweatTrack-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/SweatTrack\"",

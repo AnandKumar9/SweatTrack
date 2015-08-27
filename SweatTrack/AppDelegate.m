@@ -181,7 +181,7 @@
     }
 }
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions1:(NSDictionary *)launchOptions
 {
     
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;

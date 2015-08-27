@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Ws3-S2-ysY">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Enter Workout Details-->
+        <scene sceneID="zNF-Ga-WIn">
+            <objects>
+                <viewController id="bCa-JN-aBU" userLabel="Enter Workout Details" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="evA-B7-BaK"/>
+                        <viewControllerLayoutGuide type="bottom" id="EkL-KE-51F"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZMp-sg-cRD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OnD-ej-2Up">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f62-zS-C1s" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                        <color key="backgroundColor" red="0.92549019610000005" green="0.4823529412" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="f62-zS-C1s" secondAttribute="trailing" id="3Mj-w0-PXI"/>
+                                    <constraint firstItem="f62-zS-C1s" firstAttribute="top" secondItem="OnD-ej-2Up" secondAttribute="top" id="cCZ-7J-GZc"/>
+                                    <constraint firstAttribute="bottom" secondItem="f62-zS-C1s" secondAttribute="bottom" id="exu-Ol-qbv"/>
+                                    <constraint firstItem="f62-zS-C1s" firstAttribute="leading" secondItem="OnD-ej-2Up" secondAttribute="leading" id="tan-sr-c2E"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OnD-ej-2Up" firstAttribute="leading" secondItem="ZMp-sg-cRD" secondAttribute="leading" id="2wB-9b-5nv"/>
+                            <constraint firstItem="f62-zS-C1s" firstAttribute="top" secondItem="evA-B7-BaK" secondAttribute="bottom" id="4Fg-fl-anU"/>
+                            <constraint firstItem="EkL-KE-51F" firstAttribute="top" secondItem="OnD-ej-2Up" secondAttribute="bottom" id="GZV-5j-7IX"/>
+                            <constraint firstItem="OnD-ej-2Up" firstAttribute="top" secondItem="evA-B7-BaK" secondAttribute="bottom" id="Iz9-LV-MrW"/>
+                            <constraint firstAttribute="trailing" secondItem="OnD-ej-2Up" secondAttribute="trailing" id="JFk-28-ood"/>
+                            <constraint firstItem="EkL-KE-51F" firstAttribute="top" secondItem="f62-zS-C1s" secondAttribute="bottom" id="S7D-as-fVm"/>
+                            <constraint firstItem="f62-zS-C1s" firstAttribute="width" secondItem="ZMp-sg-cRD" secondAttribute="width" id="XQD-bq-c6A"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dCz-PB-vrQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Odm-9x-dUI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="592" y="317"/>
+        </scene>
+        <!--Enter Workout Navigation-->
+        <scene sceneID="QZE-TV-Opq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ws3-S2-ysY" userLabel="Enter Workout Navigation" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Ga-8N-Dbn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.058697488290000002" green="0.732421875" blue="0.64813862639999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bCa-JN-aBU" kind="relationship" relationship="rootViewController" id="evW-xz-9aa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0ok-Lo-jlJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="60" y="317"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

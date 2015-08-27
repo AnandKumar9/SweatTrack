@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="rOv-jw-Wkd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="rOv-jw-Wkd">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller - Work out Types-->
+        <!--Work out Types-->
         <scene sceneID="3Nj-rm-bkK">
             <objects>
                 <navigationController id="mLn-yk-zQs" sceneMemberID="viewController">
@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="778" y="880"/>
         </scene>
-        <!--Workout Types View Controller - Workout Types-->
+        <!--Workout Types-->
         <scene sceneID="spg-FK-YeJ">
             <objects>
                 <tableViewController id="6lw-h5-OM4" customClass="WorkoutTypesViewController" sceneMemberID="viewController">
@@ -34,10 +34,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Workout Type Cell" textLabel="V0i-3x-8eN" style="IBUITableViewCellStyleDefault" id="2os-R3-cgB">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2os-R3-cgB" id="okP-2Q-dkH">
-                                    <rect key="frame" x="0.0" y="0.0" width="253" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="253" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V0i-3x-8eN">
@@ -79,7 +79,7 @@
             </objects>
             <point key="canvasLocation" x="1192" y="880"/>
         </scene>
-        <!--Workout Type Settings View Controller - Work out Settings-->
+        <!--Work out Settings-->
         <scene sceneID="hh0-Lu-7Km">
             <objects>
                 <tableViewController id="zcX-xx-YJ7" customClass="WorkoutTypeSettingsViewController" sceneMemberID="viewController">
@@ -89,10 +89,10 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Workout Settings Cell" textLabel="QFu-4q-ri1" detailTextLabel="Glf-kw-AHY" style="IBUITableViewCellStyleValue1" id="kGr-G0-C1s">
-                                <rect key="frame" x="0.0" y="119" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="49.5" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kGr-G0-C1s" id="pIJ-p5-1r4">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QFu-4q-ri1">
@@ -134,10 +134,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Workout Done Details Cell" textLabel="P4s-Z3-3jw" detailTextLabel="z3M-iD-G9u" style="IBUITableViewCellStyleValue2" id="ZJ6-hG-dWW">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZJ6-hG-dWW" id="vsa-KN-zEW">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="P4s-Z3-3jw">
@@ -172,7 +172,7 @@
             </objects>
             <point key="canvasLocation" x="2204" y="887"/>
         </scene>
-        <!--Enter Workout Details View Controller - Enter Workout-->
+        <!--Enter Workout-->
         <scene sceneID="H4E-Ta-dUH">
             <objects>
                 <tableViewController id="iQC-JT-iM6" customClass="EnterWorkoutDetailsViewController" sceneMemberID="viewController">
@@ -182,10 +182,10 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Workout Details Cell" textLabel="OpB-CR-bDC" detailTextLabel="J0c-hK-6SD" style="IBUITableViewCellStyleValue1" id="0jO-7e-f9Y">
-                                <rect key="frame" x="0.0" y="119" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="113.5" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0jO-7e-f9Y" id="OZQ-JE-ndj">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OpB-CR-bDC">
@@ -226,7 +226,7 @@
             </objects>
             <point key="canvasLocation" x="1186" y="-668"/>
         </scene>
-        <!--Add Workout Type View Controller - Add Work out Type-->
+        <!--Add Work out Type-->
         <scene sceneID="hT6-K9-Roo">
             <objects>
                 <tableViewController id="2Kh-A2-Qa9" customClass="AddWorkoutTypeViewController" sceneMemberID="viewController">
@@ -236,10 +236,10 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Workout Settings Cell" textLabel="6W5-IH-cPy" detailTextLabel="fsF-BL-seY" style="IBUITableViewCellStyleValue1" id="OTW-Yc-tgt">
-                                <rect key="frame" x="0.0" y="119" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="113.5" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OTW-Yc-tgt" id="yNV-ud-VbS">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6W5-IH-cPy">
@@ -291,7 +291,7 @@
             </objects>
             <point key="canvasLocation" x="236" y="453"/>
         </scene>
-        <!--Selected Month Details View Controller - Month Details-->
+        <!--Month Details-->
         <scene sceneID="qLs-wa-cuZ">
             <objects>
                 <tableViewController id="guK-90-zZi" customClass="SelectedMonthDetailsViewController" sceneMemberID="viewController">
@@ -304,7 +304,7 @@
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Das-Gs-CFb" id="DFt-UF-aUv">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dgu-nT-Hsf">
@@ -339,7 +339,7 @@
             </objects>
             <point key="canvasLocation" x="1192" y="2"/>
         </scene>
-        <!--Workout Templates View Controller - Workout Templates-->
+        <!--Workout Templates-->
         <scene sceneID="p3k-pv-UKc">
             <objects>
                 <tableViewController id="MDx-WS-myn" customClass="WorkoutTemplatesViewController" sceneMemberID="viewController">
@@ -349,10 +349,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Workout Template Name Cell" textLabel="30O-p5-7ZI" detailTextLabel="KX9-en-8XL" style="IBUITableViewCellStyleValue2" id="I8M-qy-bRl">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I8M-qy-bRl" id="uvE-L1-KUy">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="30O-p5-7ZI">
@@ -406,10 +406,10 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Workout Type Cell" textLabel="fYV-pW-inx" style="IBUITableViewCellStyleDefault" id="69O-Ym-kUC">
-                                <rect key="frame" x="0.0" y="119" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="49.5" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="69O-Ym-kUC" id="id7-11-TqX">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fYV-pW-inx">
@@ -447,10 +447,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Every Workout on a Day Cell" textLabel="add-r0-57M" detailTextLabel="bo4-Oi-Keb" style="IBUITableViewCellStyleValue2" id="GTb-P1-0u7">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GTb-P1-0u7" id="BFQ-B2-I4V">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="add-r0-57M">
@@ -485,7 +485,7 @@
             </objects>
             <point key="canvasLocation" x="2192" y="2"/>
         </scene>
-        <!--Workout Template Default Values View Controller - Default Values-->
+        <!--Default Values-->
         <scene sceneID="EiC-hw-Q16">
             <objects>
                 <tableViewController id="kds-qD-Zpu" customClass="WorkoutTemplateDefaultValuesViewController" sceneMemberID="viewController">
@@ -495,10 +495,10 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Workout Details Cell" textLabel="53r-bQ-TcC" detailTextLabel="Utc-8i-mpc" style="IBUITableViewCellStyleValue1" id="sTN-6y-yqf">
-                                <rect key="frame" x="0.0" y="119" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="49.5" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sTN-6y-yqf" id="vLv-ec-T3y">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="53r-bQ-TcC">
@@ -530,7 +530,7 @@
             </objects>
             <point key="canvasLocation" x="2246" y="1932"/>
         </scene>
-        <!--Edit Workout Details View Controller - Workout Details-->
+        <!--Workout Details-->
         <scene sceneID="UbW-hz-oc2">
             <objects>
                 <tableViewController id="ecN-cR-f7e" customClass="EditWorkoutDetailsViewController" sceneMemberID="viewController">
@@ -540,10 +540,10 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Workout Details Cell" textLabel="VcB-7O-e2s" detailTextLabel="ESd-qq-jSe" style="IBUITableViewCellStyleValue1" id="E4Z-10-EXK">
-                                <rect key="frame" x="0.0" y="119" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="49.5" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E4Z-10-EXK" id="WGx-3w-N5S">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VcB-7O-e2s">
@@ -575,7 +575,7 @@
             </objects>
             <point key="canvasLocation" x="2922" y="414"/>
         </scene>
-        <!--Navigation Controller - Month Details-->
+        <!--Month Details-->
         <scene sceneID="jC2-cL-m57">
             <objects>
                 <navigationController id="KZh-yJ-r7f" sceneMemberID="viewController">
@@ -594,7 +594,7 @@
             </objects>
             <point key="canvasLocation" x="778" y="2"/>
         </scene>
-        <!--Navigation Controller - Enter Work Out-->
+        <!--Enter Work Out-->
         <scene sceneID="Pmu-9i-ZWq">
             <objects>
                 <navigationController id="gqu-lX-rRe" sceneMemberID="viewController">
@@ -613,7 +613,7 @@
             </objects>
             <point key="canvasLocation" x="764" y="-676"/>
         </scene>
-        <!--Navigation Controller - Templates-->
+        <!--Templates-->
         <scene sceneID="SCL-NQ-r93">
             <objects>
                 <navigationController id="IJf-yT-RTc" sceneMemberID="viewController">
