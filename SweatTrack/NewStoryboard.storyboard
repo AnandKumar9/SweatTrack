@@ -57,7 +57,6 @@
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="f62-zS-C1s" secondAttribute="trailing" id="3Mj-w0-PXI"/>
-                                    <constraint firstItem="f62-zS-C1s" firstAttribute="top" secondItem="OnD-ej-2Up" secondAttribute="top" id="cCZ-7J-GZc"/>
                                     <constraint firstAttribute="bottom" secondItem="f62-zS-C1s" secondAttribute="bottom" id="exu-Ol-qbv"/>
                                     <constraint firstItem="f62-zS-C1s" firstAttribute="leading" secondItem="OnD-ej-2Up" secondAttribute="leading" id="tan-sr-c2E"/>
                                 </constraints>
