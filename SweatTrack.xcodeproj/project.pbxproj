@@ -57,6 +57,7 @@
 		B3C7D92C1B8EAF8200B241B0 /* NewStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3C7D92B1B8EAF8200B241B0 /* NewStoryboard.storyboard */; };
 		B3C7D92E1B8EB3BF00B241B0 /* Original Image copy 2.png in Resources */ = {isa = PBXBuildFile; fileRef = B3C7D92D1B8EB3BF00B241B0 /* Original Image copy 2.png */; };
 		B3C7D9301B8EB71300B241B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3C7D92F1B8EB71300B241B0 /* Assets.xcassets */; };
+		B3C7D9341B8FA22300B241B0 /* EnterWorkoutDetailsViewControllerNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C7D9331B8FA22300B241B0 /* EnterWorkoutDetailsViewControllerNewViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -143,6 +144,8 @@
 		B3C7D92B1B8EAF8200B241B0 /* NewStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewStoryboard.storyboard; sourceTree = "<group>"; };
 		B3C7D92D1B8EB3BF00B241B0 /* Original Image copy 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Original Image copy 2.png"; sourceTree = "<group>"; };
 		B3C7D92F1B8EB71300B241B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B3C7D9321B8FA22300B241B0 /* EnterWorkoutDetailsViewControllerNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnterWorkoutDetailsViewControllerNewViewController.h; sourceTree = "<group>"; };
+		B3C7D9331B8FA22300B241B0 /* EnterWorkoutDetailsViewControllerNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnterWorkoutDetailsViewControllerNewViewController.m; sourceTree = "<group>"; };
 		EEBB1A3251D556100E7A0560 /* Pods-SweatTrack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SweatTrack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SweatTrack/Pods-SweatTrack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -219,6 +222,7 @@
 				172B550C155F32B100C75807 /* AppDelegate.h */,
 				172B550D155F32B100C75807 /* AppDelegate.m */,
 				172B550F155F32B100C75807 /* SweatTrack.xcdatamodeld */,
+				B3C7D9311B8FA1FB00B241B0 /* Add/Delete/Edit Workout Details (New) */,
 				B3C7D92B1B8EAF8200B241B0 /* NewStoryboard.storyboard */,
 				172B5517155F32E700C75807 /* MainStoryboard.storyboard */,
 				175666F71565E7E800D0043D /* Add/Delete/Edit Workout Details */,
@@ -359,6 +363,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B3C7D9311B8FA1FB00B241B0 /* Add/Delete/Edit Workout Details (New) */ = {
+			isa = PBXGroup;
+			children = (
+				B3C7D9321B8FA22300B241B0 /* EnterWorkoutDetailsViewControllerNewViewController.h */,
+				B3C7D9331B8FA22300B241B0 /* EnterWorkoutDetailsViewControllerNewViewController.m */,
+			);
+			name = "Add/Delete/Edit Workout Details (New)";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -494,6 +507,7 @@
 				17DE3A64156B22E1003C6EF8 /* EnterWorkoutDetailsViewController.m in Sources */,
 				17F64364156C047C00F0E8D7 /* DatePickerView.m in Sources */,
 				17F64369156C481C00F0E8D7 /* WorkoutTemplatePickerView.m in Sources */,
+				B3C7D9341B8FA22300B241B0 /* EnterWorkoutDetailsViewControllerNewViewController.m in Sources */,
 				173801481574997200D57B72 /* DelimiterKeys.m in Sources */,
 				17D39AB41577DC5800B4816C /* EditWorkoutDetailsViewController.m in Sources */,
 				1761BE4D157C35D800A473D1 /* WorkoutTemplateDefaultValuesViewController.m in Sources */,
