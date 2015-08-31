@@ -57,7 +57,13 @@
 		B3C7D92C1B8EAF8200B241B0 /* NewStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3C7D92B1B8EAF8200B241B0 /* NewStoryboard.storyboard */; };
 		B3C7D92E1B8EB3BF00B241B0 /* Original Image copy 2.png in Resources */ = {isa = PBXBuildFile; fileRef = B3C7D92D1B8EB3BF00B241B0 /* Original Image copy 2.png */; };
 		B3C7D9301B8EB71300B241B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3C7D92F1B8EB71300B241B0 /* Assets.xcassets */; };
-		B3C7D9341B8FA22300B241B0 /* EnterWorkoutDetailsViewControllerNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C7D9331B8FA22300B241B0 /* EnterWorkoutDetailsViewControllerNewViewController.m */; };
+		B3C7D9341B8FA22300B241B0 /* EnterWorkoutDetailsViewControllerNew.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C7D9331B8FA22300B241B0 /* EnterWorkoutDetailsViewControllerNew.m */; };
+		B3CBFE841B93A4AB00C206E0 /* EnterWorkoutSampleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CBFE821B93A4AB00C206E0 /* EnterWorkoutSampleCell.m */; };
+		B3CBFE851B93A4AB00C206E0 /* EnterWorkoutSampleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3CBFE831B93A4AB00C206E0 /* EnterWorkoutSampleCell.xib */; };
+		B3CBFE891B93C8A200C206E0 /* EnterWorkoutButtonsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CBFE871B93C8A200C206E0 /* EnterWorkoutButtonsCell.m */; };
+		B3CBFE8A1B93C8A200C206E0 /* EnterWorkoutButtonsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3CBFE881B93C8A200C206E0 /* EnterWorkoutButtonsCell.xib */; };
+		B3CBFE8E1B93CCB200C206E0 /* EnterWorkoutPickerViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3CBFE8C1B93CCB200C206E0 /* EnterWorkoutPickerViewCell.m */; };
+		B3CBFE8F1B93CCB200C206E0 /* EnterWorkoutPickerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3CBFE8D1B93CCB200C206E0 /* EnterWorkoutPickerViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -144,8 +150,17 @@
 		B3C7D92B1B8EAF8200B241B0 /* NewStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewStoryboard.storyboard; sourceTree = "<group>"; };
 		B3C7D92D1B8EB3BF00B241B0 /* Original Image copy 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Original Image copy 2.png"; sourceTree = "<group>"; };
 		B3C7D92F1B8EB71300B241B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B3C7D9321B8FA22300B241B0 /* EnterWorkoutDetailsViewControllerNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnterWorkoutDetailsViewControllerNewViewController.h; sourceTree = "<group>"; };
-		B3C7D9331B8FA22300B241B0 /* EnterWorkoutDetailsViewControllerNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnterWorkoutDetailsViewControllerNewViewController.m; sourceTree = "<group>"; };
+		B3C7D9321B8FA22300B241B0 /* EnterWorkoutDetailsViewControllerNew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnterWorkoutDetailsViewControllerNew.h; sourceTree = "<group>"; };
+		B3C7D9331B8FA22300B241B0 /* EnterWorkoutDetailsViewControllerNew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnterWorkoutDetailsViewControllerNew.m; sourceTree = "<group>"; };
+		B3CBFE811B93A4AB00C206E0 /* EnterWorkoutSampleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnterWorkoutSampleCell.h; sourceTree = "<group>"; };
+		B3CBFE821B93A4AB00C206E0 /* EnterWorkoutSampleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnterWorkoutSampleCell.m; sourceTree = "<group>"; };
+		B3CBFE831B93A4AB00C206E0 /* EnterWorkoutSampleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EnterWorkoutSampleCell.xib; sourceTree = "<group>"; };
+		B3CBFE861B93C8A200C206E0 /* EnterWorkoutButtonsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnterWorkoutButtonsCell.h; sourceTree = "<group>"; };
+		B3CBFE871B93C8A200C206E0 /* EnterWorkoutButtonsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnterWorkoutButtonsCell.m; sourceTree = "<group>"; };
+		B3CBFE881B93C8A200C206E0 /* EnterWorkoutButtonsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EnterWorkoutButtonsCell.xib; sourceTree = "<group>"; };
+		B3CBFE8B1B93CCB200C206E0 /* EnterWorkoutPickerViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnterWorkoutPickerViewCell.h; sourceTree = "<group>"; };
+		B3CBFE8C1B93CCB200C206E0 /* EnterWorkoutPickerViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnterWorkoutPickerViewCell.m; sourceTree = "<group>"; };
+		B3CBFE8D1B93CCB200C206E0 /* EnterWorkoutPickerViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EnterWorkoutPickerViewCell.xib; sourceTree = "<group>"; };
 		EEBB1A3251D556100E7A0560 /* Pods-SweatTrack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SweatTrack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SweatTrack/Pods-SweatTrack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -366,8 +381,17 @@
 		B3C7D9311B8FA1FB00B241B0 /* Add/Delete/Edit Workout Details (New) */ = {
 			isa = PBXGroup;
 			children = (
-				B3C7D9321B8FA22300B241B0 /* EnterWorkoutDetailsViewControllerNewViewController.h */,
-				B3C7D9331B8FA22300B241B0 /* EnterWorkoutDetailsViewControllerNewViewController.m */,
+				B3C7D9321B8FA22300B241B0 /* EnterWorkoutDetailsViewControllerNew.h */,
+				B3C7D9331B8FA22300B241B0 /* EnterWorkoutDetailsViewControllerNew.m */,
+				B3CBFE861B93C8A200C206E0 /* EnterWorkoutButtonsCell.h */,
+				B3CBFE871B93C8A200C206E0 /* EnterWorkoutButtonsCell.m */,
+				B3CBFE881B93C8A200C206E0 /* EnterWorkoutButtonsCell.xib */,
+				B3CBFE8B1B93CCB200C206E0 /* EnterWorkoutPickerViewCell.h */,
+				B3CBFE8C1B93CCB200C206E0 /* EnterWorkoutPickerViewCell.m */,
+				B3CBFE8D1B93CCB200C206E0 /* EnterWorkoutPickerViewCell.xib */,
+				B3CBFE811B93A4AB00C206E0 /* EnterWorkoutSampleCell.h */,
+				B3CBFE821B93A4AB00C206E0 /* EnterWorkoutSampleCell.m */,
+				B3CBFE831B93A4AB00C206E0 /* EnterWorkoutSampleCell.xib */,
 			);
 			name = "Add/Delete/Edit Workout Details (New)";
 			sourceTree = "<group>";
@@ -433,8 +457,11 @@
 				B3C7D9301B8EB71300B241B0 /* Assets.xcassets in Resources */,
 				17A8AADE15857E20005D5885 /* Star.png in Resources */,
 				17A8AAE315857F5B005D5885 /* EKG.png in Resources */,
+				B3CBFE8A1B93C8A200C206E0 /* EnterWorkoutButtonsCell.xib in Resources */,
 				17A8AAFC158587CD005D5885 /* Icon.png in Resources */,
 				17A8AAFD158587CD005D5885 /* Icon-72.png in Resources */,
+				B3CBFE851B93A4AB00C206E0 /* EnterWorkoutSampleCell.xib in Resources */,
+				B3CBFE8F1B93CCB200C206E0 /* EnterWorkoutPickerViewCell.xib in Resources */,
 				17A8AAFE158587CD005D5885 /* Icon-Small.png in Resources */,
 				17A8AAFF158587CD005D5885 /* Icon-Small-50.png in Resources */,
 				17A8AB00158587CD005D5885 /* Icon-Small@2x.png in Resources */,
@@ -493,11 +520,13 @@
 				172B552B155F33CB00C75807 /* CoreDataTableViewController.m in Sources */,
 				172B552E155F3C2800C75807 /* WorkoutTypeSettingsViewController.m in Sources */,
 				172254FD156207C4002594CF /* AddWorkoutTypeViewController.m in Sources */,
+				B3CBFE8E1B93CCB200C206E0 /* EnterWorkoutPickerViewCell.m in Sources */,
 				1762A0401562C4D800EAE8A8 /* SelectedWorkoutDetailsViewController.m in Sources */,
 				17C6EC831563195900099E95 /* SelectedMonthDetailsViewController.m in Sources */,
 				17C6EC8815631AEF00099E95 /* MonthPickerView.m in Sources */,
 				17A44DAF1564832A009AD36F /* SelectedDayDetailsViewController.m in Sources */,
 				1731C8451566099D001CCE78 /* WorkoutTypePickerView.m in Sources */,
+				B3CBFE841B93A4AB00C206E0 /* EnterWorkoutSampleCell.m in Sources */,
 				17036E7615693F0500675D3E /* WorkoutTypes.m in Sources */,
 				17036E7915693F0500675D3E /* WorkoutTemplates.m in Sources */,
 				17036E7C15693F0500675D3E /* WorkoutsDone.m in Sources */,
@@ -505,9 +534,10 @@
 				17036E961569834C00675D3E /* WorkoutTemplatesViewController.m in Sources */,
 				17036E9A15698ACE00675D3E /* WorkoutTemplateDetailsViewController.m in Sources */,
 				17DE3A64156B22E1003C6EF8 /* EnterWorkoutDetailsViewController.m in Sources */,
+				B3CBFE891B93C8A200C206E0 /* EnterWorkoutButtonsCell.m in Sources */,
 				17F64364156C047C00F0E8D7 /* DatePickerView.m in Sources */,
 				17F64369156C481C00F0E8D7 /* WorkoutTemplatePickerView.m in Sources */,
-				B3C7D9341B8FA22300B241B0 /* EnterWorkoutDetailsViewControllerNewViewController.m in Sources */,
+				B3C7D9341B8FA22300B241B0 /* EnterWorkoutDetailsViewControllerNew.m in Sources */,
 				173801481574997200D57B72 /* DelimiterKeys.m in Sources */,
 				17D39AB41577DC5800B4816C /* EditWorkoutDetailsViewController.m in Sources */,
 				1761BE4D157C35D800A473D1 /* WorkoutTemplateDefaultValuesViewController.m in Sources */,

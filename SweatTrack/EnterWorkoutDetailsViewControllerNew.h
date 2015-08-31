@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EnterWorkoutDetailsViewControllerNewViewController : UIViewController
+@interface EnterWorkoutDetailsViewControllerNew : UIViewController
 
 @end

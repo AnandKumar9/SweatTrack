@@ -3,12 +3,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Enter Workout Details-->
         <scene sceneID="zNF-Ga-WIn">
             <objects>
-                <viewController id="bCa-JN-aBU" userLabel="Enter Workout Details" customClass="EnterWorkoutDetailsViewControllerNewViewController" sceneMemberID="viewController">
+                <viewController id="bCa-JN-aBU" userLabel="Enter Workout Details" customClass="EnterWorkoutDetailsViewControllerNew" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="evA-B7-BaK"/>
                         <viewControllerLayoutGuide type="bottom" id="EkL-KE-51F"/>
@@ -25,7 +26,7 @@
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DhT-VN-Vwn">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
-                                                <color key="backgroundColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="z1d-CY-B3h">
                                                     <size key="itemSize" width="50" height="50"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -33,7 +34,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="L4G-7c-ert">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell1" id="L4G-7c-ert">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -45,7 +46,7 @@
                                                 </cells>
                                             </collectionView>
                                         </subviews>
-                                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.792156862745098" green="0.81568627450980391" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="DhT-VN-Vwn" firstAttribute="top" secondItem="f62-zS-C1s" secondAttribute="top" id="3mI-uz-YH1"/>
                                             <constraint firstAttribute="bottom" secondItem="DhT-VN-Vwn" secondAttribute="bottom" id="Fuv-7Q-z0m"/>
@@ -53,24 +54,46 @@
                                             <constraint firstAttribute="trailing" secondItem="DhT-VN-Vwn" secondAttribute="trailing" id="kym-JE-cKr"/>
                                         </constraints>
                                     </view>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrO-Ys-ZGK">
+                                        <rect key="frame" x="0.0" y="303" width="320" height="162"/>
+                                        <color key="backgroundColor" red="0.92549019610000005" green="0.4823529412" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </pickerView>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Skk-oF-CFg">
+                                        <rect key="frame" x="0.0" y="303" width="320" height="162"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="462674661.47166198">
+                                            <!--2015-08-31 00:44:21 +0000-->
+                                        </date>
+                                    </datePicker>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="f62-zS-C1s" secondAttribute="trailing" id="3Mj-w0-PXI"/>
+                                    <constraint firstAttribute="centerX" secondItem="BrO-Ys-ZGK" secondAttribute="centerX" id="3Ny-BQ-zdA"/>
+                                    <constraint firstItem="Skk-oF-CFg" firstAttribute="trailing" secondItem="BrO-Ys-ZGK" secondAttribute="trailing" id="IlI-2g-7vK"/>
+                                    <constraint firstItem="BrO-Ys-ZGK" firstAttribute="width" secondItem="OnD-ej-2Up" secondAttribute="width" id="Te7-vM-iqW"/>
+                                    <constraint firstItem="Skk-oF-CFg" firstAttribute="top" secondItem="BrO-Ys-ZGK" secondAttribute="top" id="awD-Ke-hmd"/>
                                     <constraint firstAttribute="bottom" secondItem="f62-zS-C1s" secondAttribute="bottom" id="exu-Ol-qbv"/>
                                     <constraint firstItem="f62-zS-C1s" firstAttribute="leading" secondItem="OnD-ej-2Up" secondAttribute="leading" id="tan-sr-c2E"/>
+                                    <constraint firstItem="Skk-oF-CFg" firstAttribute="leading" secondItem="BrO-Ys-ZGK" secondAttribute="leading" id="wTx-nC-zbn"/>
+                                    <constraint firstItem="Skk-oF-CFg" firstAttribute="bottom" secondItem="BrO-Ys-ZGK" secondAttribute="bottom" id="ym5-JH-ami"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="scrollsToTop" value="NO"/>
+                                </userDefinedRuntimeAttributes>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="OnD-ej-2Up" firstAttribute="leading" secondItem="ZMp-sg-cRD" secondAttribute="leading" id="2wB-9b-5nv"/>
                             <constraint firstItem="f62-zS-C1s" firstAttribute="top" secondItem="evA-B7-BaK" secondAttribute="bottom" id="4Fg-fl-anU"/>
+                            <constraint firstItem="EkL-KE-51F" firstAttribute="top" secondItem="BrO-Ys-ZGK" secondAttribute="bottom" id="5Uu-3Q-viy"/>
                             <constraint firstItem="EkL-KE-51F" firstAttribute="top" secondItem="OnD-ej-2Up" secondAttribute="bottom" id="GZV-5j-7IX"/>
                             <constraint firstItem="OnD-ej-2Up" firstAttribute="top" secondItem="evA-B7-BaK" secondAttribute="bottom" id="Iz9-LV-MrW"/>
                             <constraint firstAttribute="trailing" secondItem="OnD-ej-2Up" secondAttribute="trailing" id="JFk-28-ood"/>
                             <constraint firstItem="EkL-KE-51F" firstAttribute="top" secondItem="f62-zS-C1s" secondAttribute="bottom" id="S7D-as-fVm"/>
                             <constraint firstItem="f62-zS-C1s" firstAttribute="width" secondItem="ZMp-sg-cRD" secondAttribute="width" id="XQD-bq-c6A"/>
+                            <constraint firstItem="BrO-Ys-ZGK" firstAttribute="height" secondItem="ZMp-sg-cRD" secondAttribute="height" multiplier="1:4" id="dVi-sX-sH0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Enter Workout" id="dCz-PB-vrQ">
@@ -78,6 +101,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="DhT-VN-Vwn" id="s8G-Na-hjG"/>
+                        <outlet property="datePicker" destination="Skk-oF-CFg" id="LDk-Yn-lUn"/>
+                        <outlet property="flowLayout" destination="z1d-CY-B3h" id="7Mj-JV-nd8"/>
+                        <outlet property="templatePickerView" destination="BrO-Ys-ZGK" id="rKJ-uL-mbs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Odm-9x-dUI" userLabel="First Responder" sceneMemberID="firstResponder"/>

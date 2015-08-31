@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="EnterWorkoutPickerViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="360" height="50"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdE-8L-Hza" userLabel="Title">
+                        <rect key="frame" x="20" y="5" width="145" height="39"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aug 30, 2015" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbl-pD-v6j" userLabel="Value">
+                        <rect key="frame" x="195" y="5" width="145" height="39"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="kdE-8L-Hza" firstAttribute="centerY" secondItem="hbl-pD-v6j" secondAttribute="centerY" id="0AE-Ip-JCA"/>
+                <constraint firstItem="kdE-8L-Hza" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="65Z-k6-Uzf"/>
+                <constraint firstItem="kdE-8L-Hza" firstAttribute="height" secondItem="hbl-pD-v6j" secondAttribute="height" id="K2V-N4-2bu"/>
+                <constraint firstItem="hbl-pD-v6j" firstAttribute="leading" secondItem="kdE-8L-Hza" secondAttribute="trailing" constant="30" id="VoH-Pz-Py0"/>
+                <constraint firstAttribute="centerY" secondItem="kdE-8L-Hza" secondAttribute="centerY" id="edS-IN-1l2"/>
+                <constraint firstItem="kdE-8L-Hza" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="hDu-F6-Z0d"/>
+                <constraint firstAttribute="trailing" secondItem="hbl-pD-v6j" secondAttribute="trailing" constant="20" id="mVm-Lx-fGi"/>
+                <constraint firstItem="kdE-8L-Hza" firstAttribute="width" secondItem="hbl-pD-v6j" secondAttribute="width" id="v91-5w-sSk"/>
+            </constraints>
+            <size key="customSize" width="360" height="50"/>
+            <point key="canvasLocation" x="294" y="184"/>
+        </collectionViewCell>
+    </objects>
+</document>
